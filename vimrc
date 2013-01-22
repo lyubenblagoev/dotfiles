@@ -1,10 +1,33 @@
+set nocompatible
+
+silent! call pathogen#infect()
+
+filetype on
+filetype indent on
+filetype plugin on
+
 set ruler
 set nobackup
 set nowritebackup
 set showcmd
 set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+set showmatch
+set autoindent
+set fileencoding=utf-8
+set encoding=utf-8
+set backspace=indent,eol,start
 set history=50
 set nowrap
+
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
+syntax enable
 
 " Softtabs, 2 spaces
 set tabstop=4
