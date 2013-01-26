@@ -63,6 +63,7 @@ map ,q :q <cr>
 map ,wq :wq <cr>
 noremap <C-h> :bprev <cr>
 noremap <C-l> :bnext <cr>
+map <F2> :NERDTreeToggle <CR>
 
 " hide search highlighting
 map <Leader>h :set invhls <cr>
