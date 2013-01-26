@@ -1,4 +1,5 @@
 set nocompatible
+syntax on
 
 silent! call pathogen#infect()
 
@@ -16,20 +17,29 @@ set smartcase
 set hlsearch
 set showmatch
 set autoindent
-set fileencoding=utf-8
-set encoding=utf-8
 set backspace=indent,eol,start
 set history=50
 set nowrap
+
+if has('gui_running')
+  set guioptions-=T
+  set guioptions-=m
+  set guioptions-=r
+  set guioptions-=L
+  set guifont=Consolas
+
+  set lines=999 columns=999
+endif
+
+set enc=utf-8
+set fileencoding=utf-8
 
 set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
 
-syntax enable
-
-" Softtabs, 2 spaces
+" Softtabs, 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
