@@ -23,7 +23,6 @@ set ignorecase
 set smartcase
 set hlsearch
 set showmatch
-set autoindent
 set backspace=indent,eol,start
 set history=50
 set nowrap
@@ -37,7 +36,7 @@ if has('gui_running')
   set guioptions-=m
   set guioptions-=r
   set guioptions-=L
-  set guifont=Consolas
+  set guifont=Inconsolata:h11
 
   " Maximize gVim
   set lines=999 columns=999
