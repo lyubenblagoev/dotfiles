@@ -36,7 +36,7 @@ if has('gui_running')
   set guioptions-=m
   set guioptions-=r
   set guioptions-=L
-  set guifont=Inconsolata:h11
+  set guifont=Consolas:h10
 
   " Maximize gVim
   set lines=999 columns=999
