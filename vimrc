@@ -36,7 +36,7 @@ if has('gui_running')
   set guioptions-=m
   set guioptions-=r
   set guioptions-=L
-  set guifont=Consolas:h10
+  set guifont=DejaVu\ Sans\ Mono:h10
 
   " Set initial gVim windows size
   set lines=40 columns=160
