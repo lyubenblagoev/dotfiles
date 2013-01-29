@@ -38,8 +38,8 @@ if has('gui_running')
   set guioptions-=L
   set guifont=Consolas:h10
 
-  " Maximize gVim
-  set lines=999 columns=999
+  " Set initial gVim windows size
+  set lines=40 columns=160
 endif
 
 set enc=utf-8
