@@ -54,7 +54,7 @@ set laststatus=2
 " \ is the leader character
 let mapleader = ","
 
-inoremap ,, <esc>
+inoremap jk <esc>
 map ,w :w <cr>
 map ,q :q <cr>
 map ,wq :wq <cr>
