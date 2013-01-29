@@ -9,9 +9,7 @@ set shiftwidth=2
 set expandtab
 
 " Indent automatically depending on filetype
-filetype on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 set autoindent
 
 set ruler
