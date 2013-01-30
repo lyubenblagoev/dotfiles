@@ -55,9 +55,9 @@ set laststatus=2
 let mapleader = ","
 
 inoremap jk <esc>
-map ,w :w <cr>
-map ,q :q <cr>
-map ,wq :wq <cr>
+map <leader>w :w <cr>
+map <leader>q :q <cr>
+map <leader>wq :wq <cr>
 noremap <C-h> :bprev <cr>
 noremap <C-l> :bnext <cr>
 map <F2> :NERDTreeToggle <CR>
