@@ -73,7 +73,7 @@ colorscheme solarized
 " Turn on numbering
 set number
 set numberwidth=5
-:highlight LineNr term=bold cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+":highlight LineNr term=bold cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Case insentitive search 
 set ic
