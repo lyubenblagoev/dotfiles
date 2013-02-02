@@ -38,6 +38,10 @@ if has('gui_running')
 
   " Set initial gVim windows size
   set lines=40 columns=160
+
+  " Set gui theme
+  set background=light
+  colorscheme solarized
 endif
 
 set enc=utf-8
@@ -66,11 +70,6 @@ map <F7> :NERDTreeFind <CR>
 
 " hide search highlighting
 map <Leader>h :set invhls <cr>
-
-if has('gui_running')
-  set background=light
-  colorscheme solarized
-endif
 
 " Turn on numbering
 set number
