@@ -67,8 +67,8 @@ map <F7> :NERDTreeFind <CR>
 " hide search highlighting
 map <Leader>h :set invhls <cr>
 
-" Change colorscheme from from default to RailsCasts theme http://raw.github.com/ryanb/dotfiles/master/vim/colors/railscasts.vim
-colorscheme railscasts
+set background=light
+colorscheme solarized
 
 " Turn on numbering
 set number
