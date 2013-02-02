@@ -67,8 +67,10 @@ map <F7> :NERDTreeFind <CR>
 " hide search highlighting
 map <Leader>h :set invhls <cr>
 
-set background=light
-colorscheme solarized
+if has('gui_running')
+  set background=light
+  colorscheme solarized
+endif
 
 " Turn on numbering
 set number
