@@ -2,6 +2,7 @@ set nocompatible
 syntax on
 
 silent! call pathogen#infect()
+silent! call pathogen#helptags()
 
 " Softtabs, 2 spaces
 set tabstop=2
