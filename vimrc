@@ -61,6 +61,8 @@ let mapleader = ","
 
 inoremap jk <esc>
 map <leader>w :w <cr>
+map <C-s> :w<cr>
+inoremap <C-s> <esc>:w<cr>a
 map <leader>q :q <cr>
 map <leader>wq :wq <cr>
 noremap <C-h> :bprev <cr>
