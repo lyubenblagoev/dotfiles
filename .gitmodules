@@ -16,3 +16,6 @@
 [submodule "vim/bundle/vim-haml"]
 	path = vim/bundle/vim-haml
 	url = https://github.com/tpope/vim-haml.git
+[submodule "vim/bundle/monokai"]
+	path = vim/bundle/monokai
+	url = https://github.com/sickill/vim-monokai.git
