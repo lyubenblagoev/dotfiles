@@ -63,6 +63,9 @@ set laststatus=2
 " \ is the leader character
 let mapleader = ","
 
+nmap k gk
+nmap j gj
+
 inoremap jk <esc>
 map <leader>w :w <cr>
 map <C-s> :w<cr>
