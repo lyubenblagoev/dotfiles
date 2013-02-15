@@ -105,7 +105,7 @@ function! GetName()
 endfunction
 
 set statusline=[%{GetName()}]\ 
-set statusline+=%<%{GetCWD()}\\\ 
+set statusline+=%<%{getcwd()}\\\ 
 set statusline+=%{&modified?'\[+]':''}%*
 set statusline+=%{IsHelp()}
 set statusline+=%{&readonly?'\ (ro)\ ':''}
