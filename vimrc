@@ -77,10 +77,38 @@ map <Leader>h :set invhls <cr>
 " Turn on numbering
 set number
 set numberwidth=5
-":highlight LineNr term=bold cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Case insentitive search 
 set ic
 
 " Highlight search
 set hls
+
+" Status line
+function! GetCWD()
+  return expand(":pwd")
+endfunction
+
+function! IsHelp()
+  return &buftype=='help'?' (help) ':''
+endfunction
+
+function! GetName()
+  return expand("%:t")==''?'<none>':expand("%:t")
+endfunction
+
+set statusline=[%{GetName()}]\ 
+set statusline+=%<%{getcwd()}\\\ 
+set statusline+=%{&modified?'\[+]':''}%*
+set statusline+=%{IsHelp()}
+set statusline+=%{&readonly?'\ (ro)\ ':''}
+set statusline+=[
+set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
+set statusline+=%{&ff}\|
+set statusline+=%{strlen(&ft)?&ft:'<unknown>'}
+set statusline+=]\ 
+set statusline+=%=
+set statusline+=Col:%c
+set statusline+=,Line:%l
+set statusline+=/%L\ 
+
