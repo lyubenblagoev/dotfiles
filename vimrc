@@ -94,7 +94,7 @@ function! IsHelp()
 endfunction
 
 function! GetName()
-  return expand("%:t")==''?'<none>':expand("%:t")
+  return expand("%:t")==''?'<new>':expand("%:t")
 endfunction
 
 set statusline=[%{GetName()}]\ 
