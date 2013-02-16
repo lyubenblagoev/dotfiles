@@ -91,11 +91,6 @@ set ic
 " Highlight search
 set hls
 
-" Status line
-function! GetCWD()
-  return expand(":pwd")
-endfunction
-
 function! IsHelp()
   return &buftype=='help'?' (help) ':''
 endfunction
