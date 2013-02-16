@@ -92,11 +92,11 @@ set ic
 set hls
 
 function! IsHelp()
-  return &buftype=='help'?' (help) ':''
+  return &buftype == 'help' ? ' (help) ' : ''
 endfunction
 
 function! GetName()
-  return expand("%:t")==''?'<new>':expand("%:t")
+  return expand("%:t") == '' ? '<new>' : expand("%:t")
 endfunction
 
 set statusline=[%{GetName()}]\ 
