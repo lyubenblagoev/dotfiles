@@ -81,6 +81,8 @@ map <F7> :NERDTreeFind <CR>
 " hide search highlighting
 map <Leader>h :set invhls <cr>
 
+nnoremap Q <nop>
+
 " Turn on numbering
 set number
 set numberwidth=5
