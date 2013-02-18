@@ -37,3 +37,6 @@
 [submodule "vim/bundle/vim-racket"]
 	path = vim/bundle/vim-racket
 	url = https://github.com/wlangstroth/vim-racket.git
+[submodule "vim/bundle/wombat"]
+	path = vim/bundle/wombat
+	url = https://github.com/vim-scripts/Wombat.git
