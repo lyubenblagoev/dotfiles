@@ -4,10 +4,8 @@ syntax on
 silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=4
+set shiftwidth=4
 
 " Indent automatically depending on filetype
 filetype plugin indent on
