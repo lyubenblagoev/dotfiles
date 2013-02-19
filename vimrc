@@ -6,6 +6,7 @@ silent! call pathogen#helptags()
 
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " Indent automatically depending on filetype
 filetype plugin indent on
@@ -26,6 +27,7 @@ set nowrap
 set noswapfile
 set visualbell
 set cursorline
+set hidden
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
 " situations.
@@ -65,20 +67,30 @@ nmap k gk
 nmap j gj
 
 inoremap jk <esc>
+
+" Save and quit mappings
 map <leader>w :w <cr>
 map <C-s> :w<cr>
 inoremap <C-s> <esc>:w<cr>a
 map <leader>q :q <cr>
 map <leader>wq :wq <cr>
+
+" Buffer mappings
 noremap <C-h> :bprev <cr>
 noremap <C-l> :bnext <cr>
+inoremap <C-h> <esc>:bprev<cr>
+inoremap <C-l> <esc>:bnext<cr>
 
+" NerdTree mappings
 map <F2> :NERDTreeToggle <CR>
+imap <F2> <esc>:NERDTreeToggle <CR>
 map <F7> :NERDTreeFind <CR>
+imap <F7> <esc>:NERDTreeFind <CR>
 
-" hide search highlighting
+" Hide search highlighting
 map <Leader>h :set invhls <cr>
 
+" Disable Ex-Mode
 nnoremap Q <nop>
 
 " Turn on numbering
@@ -95,12 +107,8 @@ function! IsHelp()
   return &buftype == 'help' ? ' (help) ' : ''
 endfunction
 
-function! GetName()
-  return expand("%:t") == '' ? '<new>' : expand("%:t")
-endfunction
-
 set statusline=%{&modified?'\[+]':''}%*
-set statusline+=[%{GetName()}]\ 
+set statusline+=[%t]\ 
 set statusline+=%<%{getcwd()}\\\ 
 set statusline+=%{IsHelp()}
 set statusline+=%{&readonly?'\ (ro)\ ':''}
