@@ -99,9 +99,9 @@ function! GetName()
   return expand("%:t") == '' ? '<new>' : expand("%:t")
 endfunction
 
-set statusline=[%{GetName()}]\ 
+set statusline=%{&modified?'\[+]':''}%*
+set statusline+=[%{GetName()}]\ 
 set statusline+=%<%{getcwd()}\\\ 
-set statusline+=%{&modified?'\[+]':''}%*
 set statusline+=%{IsHelp()}
 set statusline+=%{&readonly?'\ (ro)\ ':''}
 set statusline+=[
