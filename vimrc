@@ -5,6 +5,7 @@ silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 
@@ -45,8 +46,7 @@ if has('gui_running')
   set lines=40 columns=160
 
   " Set gui theme
-  set background=light
-  colorscheme solarized
+  colorscheme wombat
 endif
 
 set enc=utf-8
