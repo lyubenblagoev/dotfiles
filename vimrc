@@ -35,18 +35,18 @@ set hidden
 set timeoutlen=500
 
 if has('gui_running')
-  " Disabling GUI options works one by one (see :help guioptions)
-  set guioptions-=T
-  set guioptions-=m
-  set guioptions-=r
-  set guioptions-=L
-  set guifont=DejaVu\ Sans\ Mono:h10
+    " Disabling GUI options works one by one (see :help guioptions)
+    set guioptions-=T
+    set guioptions-=m
+    set guioptions-=r
+    set guioptions-=L
+    set guifont=DejaVu\ Sans\ Mono:h10
 
-  " Set initial gVim windows size
-  set lines=40 columns=160
+    " Set initial gVim windows size
+    set lines=40 columns=160
 
-  " Set gui theme
-  colorscheme wombat
+    " Set gui theme
+    colorscheme wombat
 endif
 
 set enc=utf-8
@@ -114,7 +114,7 @@ set ic
 set hls
 
 function! IsHelp()
-  return &buftype == 'help' ? ' (help) ' : ''
+    return &buftype == 'help' ? ' (help) ' : ''
 endfunction
 
 set statusline=%{&modified?'\[+]':''}%*
