@@ -31,7 +31,7 @@ set cursorline
 set hidden
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
-" situations.
+" situations).
 set timeoutlen=500
 
 if has('gui_running')
