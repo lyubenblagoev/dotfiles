@@ -52,12 +52,6 @@ endif
 set enc=utf-8
 set fileencoding=utf-8
 
-" When switching windows maximize active window
-"set winwidth=84
-"set winheight=5
-"set winminheight=5
-"set winheight=999
-
 " Always display the status line
 set laststatus=2
 
