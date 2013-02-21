@@ -86,6 +86,7 @@ map <leader>q :q <cr>
 map <leader>wq :wq <cr>
 
 " Buffer mappings
+nnoremap <C-tab> :b#<cr>
 noremap <C-h> :bprev <cr>
 noremap <C-l> :bnext <cr>
 inoremap <C-h> <esc>:bprev<cr>
