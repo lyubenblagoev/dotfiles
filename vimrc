@@ -81,10 +81,14 @@ map <leader>wq :wq <cr>
 
 " Buffer mappings
 nnoremap <C-tab> :b#<cr>
-noremap <C-h> :bprev <cr>
-noremap <C-l> :bnext <cr>
-inoremap <C-h> <esc>:bprev<cr>
-inoremap <C-l> <esc>:bnext<cr>
+noremap <S-h> :bprev <cr>
+noremap <S-l> :bnext <cr>
+
+"Windows mappings
+noremap <C-h> <C-w>h<cr>
+noremap <C-l> <C-w>l<cr>
+noremap <C-j> <C-w>j<cr>
+noremap <C-k> <C-w>k<cr>
 
 " NerdTree mappings
 map <F2> :NERDTreeToggle <CR>
