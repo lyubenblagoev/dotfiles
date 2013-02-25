@@ -58,9 +58,9 @@ set laststatus=2
 " \ is the leader character
 let mapleader = ","
 
+" Movement mappings
 nmap k gk
 nmap j gj
-
 nmap <space> <PageDown>
 nmap <s-space> <PageUp>
 
@@ -87,7 +87,7 @@ nnoremap <C-tab> :b#<cr>
 noremap <S-h> :bprev <cr>
 noremap <S-l> :bnext <cr>
 
-"Windows mappings
+" Windows mappings
 noremap <C-h> <C-w>h<cr>
 noremap <C-l> <C-w>l<cr>
 noremap <C-j> <C-w>j<cr>
@@ -115,6 +115,7 @@ set ic
 " Highlight search
 set hls
 
+" Status line settings
 function! IsHelp()
     return &buftype == 'help' ? ' (help) ' : ''
 endfunction
@@ -134,3 +135,7 @@ set statusline+=Col:%c
 set statusline+=,Line:%l
 set statusline+=/%L\ 
 
+" Session settings
+set sessionoptions+=winpos
+let g:session_autoload='yes'
+let g:session_autosave='yes'
