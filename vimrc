@@ -61,6 +61,9 @@ let mapleader = ","
 nmap k gk
 nmap j gj
 
+nmap <space> <PageDown>
+nmap <s-space> <PageUp>
+
 inoremap jk <esc>
 
 nmap <F5> :e!<cr>
