@@ -99,6 +99,9 @@ imap <F2> <esc>:NERDTreeToggle <CR>
 map <F7> :NERDTreeFind <CR>
 imap <F7> <esc>:NERDTreeFind <CR>
 
+" Tagbar mappings
+map <F8> :TagbarToggle <CR>
+
 " Hide search highlighting
 map <Leader>h :set invhls <cr>
 
