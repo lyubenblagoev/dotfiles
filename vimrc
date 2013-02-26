@@ -139,3 +139,4 @@ set statusline+=/%L\
 set sessionoptions+=winpos
 let g:session_autoload='yes'
 let g:session_autosave='yes'
+let g:session_default_to_last="yes"
