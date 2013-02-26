@@ -55,6 +55,9 @@ set fileencoding=utf-8
 " Always display the status line
 set laststatus=2
 
+" Scrolling
+set scrolloff=2
+
 " \ is the leader character
 let mapleader = ","
 
