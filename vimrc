@@ -82,6 +82,7 @@ vmap <C-]> >gv
 map <leader>w :w <cr>
 map <C-s> :w<cr>
 inoremap <C-s> <esc>:w<cr>a
+map :Q  :q <cr>
 map <leader>q :q <cr>
 map <leader>wq :wq <cr>
 
@@ -145,4 +146,4 @@ set statusline+=/%L\
 set sessionoptions+=winpos
 let g:session_autoload='yes'
 let g:session_autosave='yes'
-let g:session_default_to_last="yes"
+let g:session_default_to_last=1
