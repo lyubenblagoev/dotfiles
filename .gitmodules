@@ -74,3 +74,7 @@
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
     ignore = dirty
+[submodule "vim/bundle/prefixer"]
+	path = vim/bundle/prefixer
+	url = https://github.com/vim-scripts/prefixer.vim.git
+    ignore = dirty
