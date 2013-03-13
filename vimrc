@@ -40,13 +40,18 @@ if has('gui_running')
     set guioptions-=m
     set guioptions-=r
     set guioptions-=L
-    set guifont=DejaVu\ Sans\ Mono:h10
 
     " Set initial gVim windows size
     set lines=40 columns=130
 
     " Set gui theme
     colorscheme wombat
+endif
+
+if has('gui_gtk')
+    set guifont=DejaVu\ Sans\ Mono\ 10
+elseif has('gui_win32')
+    set guifont=DejaVu\ Sans\ Mono:h10
 endif
 
 set enc=utf-8
