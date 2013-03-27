@@ -78,3 +78,7 @@
 	path = vim/bundle/prefixer
 	url = https://github.com/vim-scripts/prefixer.vim.git
     ignore = dirty
+[submodule "vim/bundle/vim-multicursor"]
+	path = vim/bundle/vim-multicursor
+	url = https://github.com/paradigm/vim-multicursor.git
+    ignore = dirty
