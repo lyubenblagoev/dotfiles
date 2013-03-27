@@ -82,3 +82,7 @@
 	path = vim/bundle/vim-multicursor
 	url = https://github.com/paradigm/vim-multicursor.git
     ignore = dirty
+[submodule "vim/bundle/vim-multiedit"]
+	path = vim/bundle/vim-multiedit
+	url = https://github.com/hlissner/vim-multiedit.git
+    ignore = dirty
