@@ -42,7 +42,7 @@ if has('gui_running')
     set guioptions-=L
 
     " Set initial gVim windows size
-    set lines=40 columns=130
+    set lines=45 columns=130
 
     " Set gui theme
     colorscheme wombat
