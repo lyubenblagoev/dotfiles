@@ -92,9 +92,9 @@ map <leader>q :q <cr>
 map <leader>wq :wq <cr>
 
 " Buffer mappings
-nnoremap <C-tab> :b#<cr>
-noremap <S-h> :bprev <cr>
-noremap <S-l> :bnext <cr>
+nnoremap <silent> <C-tab> :b#<cr>
+noremap <silent> <F12> :bn<cr>
+noremap <silent> <S-F12> :bp<cr>
 
 " Windows mappings
 noremap <C-h> <C-w>h<cr>
