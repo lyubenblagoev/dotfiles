@@ -82,3 +82,7 @@
 	path = vim/bundle/vim-multiedit
 	url = https://github.com/hlissner/vim-multiedit.git
     ignore = dirty
+[submodule "vim/bundle/vylight"]
+	path = vim/bundle/vylight
+	url = https://github.com/vim-scripts/vylight.git
+    ignore = dirty
