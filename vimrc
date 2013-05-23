@@ -52,6 +52,7 @@ if has('gui_gtk')
     set guifont=DejaVu\ Sans\ Mono\ 10
 elseif has('gui_win32')
     set guifont=DejaVu\ Sans\ Mono:h10
+    map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
 endif
 
 set enc=utf-8

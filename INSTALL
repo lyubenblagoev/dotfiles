@@ -1,0 +1,4 @@
+Download and save the gvimfullscreen.dll file to the directory where the 
+gvim.exe is located to support full screen on Windows.
+
+https://github.com/derekmcloughlin/gvimfullscreen_win32/raw/master/gvimfullscreen.dll
