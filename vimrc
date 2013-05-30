@@ -45,7 +45,7 @@ if has('gui_running')
     set lines=45 columns=130
 
     " Set gui theme
-    colorscheme slushnpoppies
+    colorscheme wombat
 endif
 
 if has('gui_gtk')
