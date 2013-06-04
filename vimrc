@@ -27,7 +27,6 @@ set history=50
 set nowrap
 set noswapfile
 set visualbell
-set cursorline
 set hidden
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
@@ -46,6 +45,8 @@ if has('gui_running')
 
     " Set gui theme
     colorscheme mustang
+
+    set cursorline
 endif
 
 if has('gui_gtk')
