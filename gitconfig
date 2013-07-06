@@ -1,9 +1,6 @@
 [user]
     name = Lyuben Blagoev
     email = lblagoev@gmail.com
-[core]
-    whitespace = fix,trailing-space,cr-at-eol
-    autocrlf = true
 [color]
     ui = true
 [color "branch"]
