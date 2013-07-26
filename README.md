@@ -1,4 +1,1 @@
-dotfiles
-========
-
-My dot files - primarily Vim and Git configuration files
+Configuration files, mainly for Vim.
