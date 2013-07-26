@@ -1,6 +1,0 @@
-alias lsl='ls -l'
-alias lsla='ls -la'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-alias dist-upgrade='sudo apt-get dist-upgrade'
-alias restart='sudo shutdown -r now'
