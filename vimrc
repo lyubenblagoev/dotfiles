@@ -79,12 +79,6 @@ inoremap jk <esc>
 nmap <F5> :e!<cr>
 nmap <leader>s :so %<cr>
 
-" Indentation mappings
-nmap <C-[> <<
-nmap <C-]> >>
-vmap <C-[> <gv
-vmap <C-]> >gv
-
 " Save and quit mappings
 map <leader>w :w <cr>
 map <C-s> :w<cr>
