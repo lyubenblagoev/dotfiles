@@ -43,9 +43,6 @@ if has('gui_running')
     " Set initial gVim windows size
     set lines=45 columns=130
 
-    " Set gui theme
-    colorscheme mustang
-
     set cursorline
 endif
 
@@ -55,6 +52,8 @@ elseif has('gui_win32')
     set guifont=DejaVu\ Sans\ Mono:h10
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
 endif
+
+colorscheme mustang
 
 set enc=utf-8
 set fileencoding=utf-8
