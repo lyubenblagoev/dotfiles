@@ -130,7 +130,7 @@ endfunction
 
 set statusline=%{&modified?'\[+]':''}%*
 set statusline+=[%t]\ 
-set statusline+=%<%{getcwd()}\\\ 
+set statusline+=%<%{getcwd()}\ 
 set statusline+=%{IsHelp()}
 set statusline+=%{&readonly?'\ (ro)\ ':''}
 set statusline+=[
