@@ -1,1 +1,1 @@
-Configuration files, mainly for Vim.
+Configuration files, mostly for Vim.
