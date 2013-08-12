@@ -4,7 +4,16 @@
 
 set -e
 
-DOTFILES=`pwd`
+if [[ ! -d "$dotfiles_path"]]; then 
+	if [[ "$1" != "" && -d "$1"]]; then 
+		dotfiles_path=$1
+	else
+		echo "Path to the dotfiles repository is not specified"
+		exit 1
+	fi
+fi
+
+$dotfile_path=`pwd`
 
 # Backup current config
 [[ -e ~/.gitconfig ]] && mv ~/.gitconfig ~/.gitconfig.bak
@@ -12,9 +21,9 @@ DOTFILES=`pwd`
 [[ -d ~/.vim ]] && mv ~/.vim ~/.vim.bak
 
 # Create symlinks in home directory
-ln -s $DOTFILES/vimrc ~/.vimrc
-ln -s $DOTFILES/vim ~/.vim
-ln -s $DOTFILES/gitconfig ~/.gitconfig
+ln -s $dotfiles_path/vimrc ~/.vimrc
+ln -s $dotfiles_path/vim ~/.vim
+ln -s $dotfiles_path/gitconfig ~/.gitconfig
 
 # Init git submodules
 git submodule init && git submodule update
