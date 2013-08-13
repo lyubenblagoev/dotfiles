@@ -13,15 +13,15 @@ else
     exit 1
 fi
 
-# Backup current config
-[[ -e ~/.gitconfig ]] && mv ~/.gitconfig ~/.gitconfig.bak
-[[ -e ~/.vimrc ]] && mv ~/.vimrc ~/.vimrc.bak
-[[ -d ~/.vim ]] && mv ~/.vim ~/.vim.bak
+# Remove current configuration
+[[ -e $HOME/.gitconfig ]] && rm -f $HOME/.gitconfig
+[[ -e $HOME/.vimrc ]] && rm -f $HOME/.vimrc
+[[ -d $HOME/.vim ]] && rm -rf $HOME/.vim
 
 # Create symlinks in home directory
-ln -s $dotfiles_path/vimrc ~/.vimrc
-ln -s $dotfiles_path/vim ~/.vim
-ln -s $dotfiles_path/gitconfig ~/.gitconfig
+ln -s $dotfiles_path/vimrc $HOME/.vimrc
+ln -s $dotfiles_path/vim $HOME/.vim
+ln -s $dotfiles_path/gitconfig $HOME/.gitconfig
 
 # Init git submodules
 cd $dotfiles_path
