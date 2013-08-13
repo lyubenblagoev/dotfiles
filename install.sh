@@ -18,4 +18,4 @@ chmod -R 740 $dotfiles_path
 
 cd $dotfiles_path
 $dotfiles_path/configure.sh $dotfiles_path
-jd $initial_path
+cd $initial_path
