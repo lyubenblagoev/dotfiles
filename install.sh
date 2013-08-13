@@ -13,9 +13,11 @@ if [[ ! -d $dotfiles_path ]]; then
 fi 
 
 git clone https://github.com/lyubenblagoev/dotfiles $dotfiles_path
-cd $dotfiles_path
-git checkout features/webinstall
 
+cd $dotfiles_path
 chmod 700 $dotfiles_path/configure.sh
+chmod 700 $dotfiles_path/install.sh
+
 $dotfiles_path/configure.sh $dotfiles_path
+
 cd $initial_path
