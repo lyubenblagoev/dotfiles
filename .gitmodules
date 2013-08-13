@@ -59,30 +59,30 @@
     url = https://github.com/scrooloose/nerdcommenter.git
     ignore = dirty
 [submodule "vim/bundle/vim-session"]
-	path = vim/bundle/vim-session
-	url = https://github.com/xolox/vim-session.git
+    path = vim/bundle/vim-session
+    url = https://github.com/xolox/vim-session.git
     ignore = dirty
 [submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
+    path = vim/bundle/tagbar
+    url = https://github.com/majutsushi/tagbar.git
     ignore = dirty
 [submodule "vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
-	url = https://github.com/groenewege/vim-less.git
+    path = vim/bundle/vim-less
+    url = https://github.com/groenewege/vim-less.git
     ignore = dirty
 [submodule "vim/bundle/prefixer"]
-	path = vim/bundle/prefixer
-	url = https://github.com/vim-scripts/prefixer.vim.git
+    path = vim/bundle/prefixer
+    url = https://github.com/vim-scripts/prefixer.vim.git
     ignore = dirty
 [submodule "vim/bundle/vim-multiedit"]
-	path = vim/bundle/vim-multiedit
-	url = https://github.com/hlissner/vim-multiedit.git
+    path = vim/bundle/vim-multiedit
+    url = https://github.com/hlissner/vim-multiedit.git
     ignore = dirty
 [submodule "vim/bundle/vylight"]
-	path = vim/bundle/vylight
-	url = https://github.com/vim-scripts/vylight.git
+    path = vim/bundle/vylight
+    url = https://github.com/vim-scripts/vylight.git
     ignore = dirty
 [submodule "vim/bundle/zencoding-vim"]
-	path = vim/bundle/zencoding-vim
-	url = https://github.com/mattn/zencoding-vim.git
+    path = vim/bundle/zencoding-vim
+    url = https://github.com/mattn/zencoding-vim.git
     ignore = dirty
