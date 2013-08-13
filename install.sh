@@ -3,6 +3,7 @@
 set -e
 
 dotfiles_path=$HOME/.dotfiles
+initial_path=`pwd`
 
 command -v git > /dev/null || { echo 'GIT is required but not found.'; exit 1; }
 command -v vim > /dev/null || { echo 'VIM is required but not found.'; exit 1; }
@@ -17,3 +18,4 @@ git checkout features/webinstall
 
 chmod 700 $dotfiles_path/configure.sh
 $dotfiles_path/configure.sh $dotfiles_path
+cd $initial_path

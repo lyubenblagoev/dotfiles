@@ -6,7 +6,7 @@ set -e
 
 initial_path=`pwd`
 
-if [[ -d "$1" ]]; then
+if [[ -d "${1%/}" ]]; then
     dotfiles_path=${1%/}
 else 
     echo "Incorrect dotfiles path" >&2
