@@ -21,7 +21,5 @@ ln -s $dotfiles_path/vimrc ~/.vimrc
 ln -s $dotfiles_path/vim ~/.vim
 ln -s $dotfiles_path/gitconfig ~/.gitconfig
 
-exit 0
-
 # Init git submodules
 git submodule init && git submodule update
