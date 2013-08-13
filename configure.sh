@@ -24,4 +24,4 @@ ln -s $dotfiles_path/gitconfig ~/.gitconfig
 exit 0
 
 # Init git submodules
-#git submodule init && git submodule update
+git submodule init && git submodule update
