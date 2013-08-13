@@ -86,3 +86,6 @@
     path = vim/bundle/zencoding-vim
     url = https://github.com/mattn/zencoding-vim.git
     ignore = dirty
+[submodule "vim/bundle/vim-misc"]
+	path = vim/bundle/vim-misc
+	url = https://github.com/xolox/vim-misc.git
