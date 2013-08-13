@@ -4,16 +4,7 @@
 
 set -e
 
-if [[ ! -d "$dotfiles_path"]]; then 
-	if [[ "$1" != "" && -d "$1"]]; then 
-		dotfiles_path=$1
-	else
-		echo "Path to the dotfiles repository is not specified"
-		exit 1
-	fi
-fi
-
-$dotfile_path=`pwd`
+dotfiles_path=`dirname $0`
 
 # Backup current config
 [[ -e ~/.gitconfig ]] && mv ~/.gitconfig ~/.gitconfig.bak
