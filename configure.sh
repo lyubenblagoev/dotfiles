@@ -4,6 +4,8 @@
 
 set -e
 
+initial_path=`pwd`
+
 if [[ -d "$1" ]]; then
     dotfiles_path=$1
 else 
@@ -22,4 +24,6 @@ ln -s $dotfiles_path/vim ~/.vim
 ln -s $dotfiles_path/gitconfig ~/.gitconfig
 
 # Init git submodules
+cd $dotfiles_path
 git submodule init && git submodule update
+cd $initial_path
