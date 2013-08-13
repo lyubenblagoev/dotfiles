@@ -7,7 +7,7 @@ set -e
 if [[ -d "$1" ]]; then
     dotfiles_path=$1
 else 
-    echo "Incorrect dotfiles path" > 2
+    echo "Incorrect dotfiles path" >&2
     exit 1
 fi
 
@@ -21,5 +21,7 @@ ln -s $dotfiles_path/vimrc ~/.vimrc
 ln -s $dotfiles_path/vim ~/.vim
 ln -s $dotfiles_path/gitconfig ~/.gitconfig
 
+exit 0
+
 # Init git submodules
-git submodule init && git submodule update
+#git submodule init && git submodule update
