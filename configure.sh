@@ -4,7 +4,12 @@
 
 set -e
 
-dotfiles_path=`dirname $0`
+if [[ -d "$1" ]]; then
+    dotfiles_path=$1
+else 
+    echo "Incorrect dotfiles path" > 2
+    exit 1
+fi
 
 # Backup current config
 [[ -e ~/.gitconfig ]] && mv ~/.gitconfig ~/.gitconfig.bak
