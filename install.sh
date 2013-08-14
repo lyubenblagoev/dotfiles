@@ -3,13 +3,11 @@
 DOT_DIR=$HOME/.dotfiles
 INITIAL_DIR=`pwd`
 
-command -v git > /dev/null
-if [[ $? != 0 ]]; then
+if ! command -v git > /dev/null; then
     echo 'Git is required, but not found. Aborting.' >&2
     exit 1
 fi 
-command -v vim > /dev/null
-if [[ $? != 0 ]]; then
+if ! command -v vim > /dev/null; then
     echo 'Vim is required, but not found. Aborting.' >&2
     exit 1
 fi
