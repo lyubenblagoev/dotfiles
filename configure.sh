@@ -4,10 +4,10 @@
 
 set -e
 
-initial_path=`pwd`
+INITIAL_DIR=`pwd`
 
 if [[ -d "${1%/}" ]]; then
-    dotfiles_path=${1%/}
+    DOT_DIR=${1%/}
 else 
     echo "Incorrect dotfiles path" >&2
     exit 1
@@ -19,11 +19,11 @@ fi
 [[ -d $HOME/.vim ]] && rm -rf $HOME/.vim
 
 # Create symlinks in home directory
-ln -s $dotfiles_path/vimrc $HOME/.vimrc
-ln -s $dotfiles_path/vim $HOME/.vim
-ln -s $dotfiles_path/gitconfig $HOME/.gitconfig
+ln -s $DOT_DIR/vimrc $HOME/.vimrc
+ln -s $DOT_DIR/vim $HOME/.vim
+ln -s $DOT_DIR/gitconfig $HOME/.gitconfig
 
 # Init git submodules
-cd $dotfiles_path
+cd $DOT_DIR
 git submodule init && git submodule update
-cd $initial_path
+cd $INITIAL_DIR
