@@ -86,3 +86,7 @@
     path = vim/bundle/vim-misc
     url = https://github.com/xolox/vim-misc.git
     ignore = dirty
+[submodule "vim/bundle/emmet-vim"]
+    path = vim/bundle/emmet-vim
+    url = https://github.com/mattn/emmet-vim.git
+    ignore = dirty
