@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Install script for dotfiles
-
 set -e
 
 INITIAL_DIR=`pwd`
