@@ -20,6 +20,7 @@ else
     cd $DOT_DIR && git pull
 fi
 
+cd scripts
 chmod 700 configure.sh install.sh
 ./configure.sh $DOT_DIR
 
