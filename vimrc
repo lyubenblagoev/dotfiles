@@ -41,7 +41,7 @@ if has('gui_running')
     set guioptions-=L
 
     " Set initial gVim windows size
-    set lines=45 columns=130
+    set lines=45 columns=165
 
     set cursorline
 endif
@@ -49,11 +49,11 @@ endif
 if has('gui_gtk')
     set guifont=Monaco
 elseif has('gui_win32')
-    set guifont=DejaVu\ Sans\ Mono:h10
+    set guifont=Consolas:h10
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
 endif
 
-colorscheme mustang
+colorscheme github
 
 set enc=utf-8
 set fileencoding=utf-8
