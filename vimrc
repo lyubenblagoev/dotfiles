@@ -78,6 +78,9 @@ inoremap jk <esc>
 nmap <F5> :e!<cr>
 nmap <leader>s :so %<cr>
 
+nmap <silent> <leader>ev :e $MYVIMRC<cr>
+nmap <silent> <leader>sv :so $MYVIMRC<cr>
+
 " Save and quit mappings
 map <leader>w :w <cr>
 map <C-s> :w<cr>
