@@ -101,10 +101,10 @@ noremap <C-j> <C-w>j<cr>
 noremap <C-k> <C-w>k<cr>
 
 " NerdTree mappings
-map <F2> :NERDTreeToggle <CR>
-imap <F2> <esc>:NERDTreeToggle <CR>
-map <F7> :NERDTreeFind <CR>
-imap <F7> <esc>:NERDTreeFind <CR>
+map <silent> <F2> :NERDTreeToggle <CR>
+imap <silent> <F2> <esc>:NERDTreeToggle <CR>
+map <silent> <F7> :NERDTreeFind <CR>
+imap <silent> <F7> <esc>:NERDTreeFind <CR>
 
 " Tagbar mappings
 map <F8> :TagbarToggle <CR>
