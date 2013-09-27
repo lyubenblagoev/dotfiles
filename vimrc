@@ -147,9 +147,9 @@ set statusline+=/%L\
 
 " Session settings
 set sessionoptions+=winpos
-let g:session_autoload='yes'
+let g:session_autoload='no'
 let g:session_autosave='yes'
-let g:session_default_to_last=1
+let g:session_default_to_last=0
 
 " Insert a disposable marker after the cursor
 nmap <leader>ma :MultieditAddMark a<CR>
