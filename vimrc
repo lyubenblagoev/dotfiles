@@ -151,6 +151,10 @@ let g:session_autoload='no'
 let g:session_autosave='yes'
 let g:session_default_to_last=0
 
+nmap <leader>os :OpenSession 
+nmap <leader>ss :SaveSession 
+nmap <leader>cs :CloseSession <CR>
+
 " Insert a disposable marker after the cursor
 nmap <leader>ma :MultieditAddMark a<CR>
 
