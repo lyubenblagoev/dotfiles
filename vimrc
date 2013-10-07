@@ -93,6 +93,8 @@ map <leader>wq :wq <cr>
 nnoremap <silent> <C-tab> :b#<cr>
 noremap <silent> <F12> :bn<cr>
 noremap <silent> <S-F12> :bp<cr>
+noremap <silent> <leader>bad :1,1000 bd!<cr>
+noremap <silent> <leader>bd :bd<cr>
 
 " Windows mappings
 noremap <C-h> <C-w>h<cr>
