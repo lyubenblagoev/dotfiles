@@ -102,6 +102,8 @@ noremap <C-l> <C-w>l<cr>
 noremap <C-j> <C-w>j<cr>
 noremap <C-k> <C-w>k<cr>
 
+" NerdTree
+let NERDTreeWinSize=38
 " NerdTree mappings
 map <silent> <F2> :NERDTreeToggle <CR>
 imap <silent> <F2> <esc>:NERDTreeToggle <CR>
