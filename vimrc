@@ -168,3 +168,5 @@ let g:session_default_to_last=0
 nmap <leader>os :OpenSession 
 nmap <leader>ss :SaveSession 
 nmap <leader>cs :CloseSession <CR>
+
+au BufNewFile,BufRead *.gradle setf groovy
