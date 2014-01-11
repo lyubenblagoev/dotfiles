@@ -146,7 +146,6 @@ hi FileModified guifg=White guibg=Red gui=bold ctermfg=White ctermbg=Red cterm=b
 set statusline=%#FileModified#
 set statusline+=%{&modified?'\[+]':''}%*
 set statusline+=[%t]\ 
-set statusline+=%<%{getcwd()}\ 
 set statusline+=%{IsHelp()}
 set statusline+=%{&readonly?'\ (ro)\ ':''}
 set statusline+=[
