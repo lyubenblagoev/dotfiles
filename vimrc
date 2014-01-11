@@ -41,7 +41,7 @@ if has('gui_running')
     set guioptions-=L
 
     " Set initial gVim windows size
-    set lines=45 columns=165
+    set lines=35 columns=165
 
     set cursorline
 endif
@@ -112,6 +112,7 @@ imap <silent> <F7> <esc>:NERDTreeFind <CR>
 
 " Tagbar mappings
 map <F8> :TagbarToggle <CR>
+let g:tagbar_autoclose = 1
 
 " Hide search highlighting
 map <Leader>h :set invhls <cr>
@@ -134,7 +135,16 @@ function! IsHelp()
     return &buftype == 'help' ? ' (help) ' : ''
 endfunction
 
-set statusline=%{&modified?'\[+]':''}%*
+augroup FileModifiedHighlight
+    autocmd! ColorScheme *
+        \ syn match FileModified "^tags:.*" |
+        \ hi FileModified guifg=White guibg=Red gui=bold ctermfg=White ctermbg=Red cterm=bold
+augroup end
+
+hi FileModified guifg=White guibg=Red gui=bold ctermfg=White ctermbg=Red cterm=bold
+
+set statusline=%#FileModified#
+set statusline+=%{&modified?'\[+]':''}%*
 set statusline+=[%t]\ 
 set statusline+=%<%{getcwd()}\ 
 set statusline+=%{IsHelp()}
