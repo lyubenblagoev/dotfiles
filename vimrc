@@ -46,14 +46,17 @@ if has('gui_running')
     set cursorline
 endif
 
+colorscheme monokai
+
 if has('gui_gtk')
     set guifont=Monaco\ 9
+colorscheme github
 elseif has('gui_win32')
     set guifont=Consolas:h10
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
+    colorscheme github
 endif
 
-colorscheme github
 
 set enc=utf-8
 set fileencoding=utf-8
