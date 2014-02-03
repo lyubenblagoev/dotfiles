@@ -41,7 +41,7 @@ if has('gui_running')
     set guioptions-=L
 
     " Set initial gVim windows size
-    set lines=35 columns=165
+    set lines=41 columns=165
 
     set cursorline
 endif
