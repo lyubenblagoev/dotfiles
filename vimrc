@@ -163,7 +163,8 @@ set statusline+=,Line:%l
 set statusline+=/%L\ 
 
 " Session settings
-set sessionoptions+=winpos
+set sessionoptions+=winpos,resize
+set sessionoptions-=options
 let g:session_autoload='no'
 let g:session_autosave='yes'
 let g:session_default_to_last=0
