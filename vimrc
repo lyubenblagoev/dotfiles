@@ -46,6 +46,7 @@ if has('gui_running')
     set cursorline
 endif
 
+" Use monokai on console vim
 colorscheme monokai
 
 if has('gui_gtk')
@@ -56,7 +57,6 @@ elseif has('gui_win32')
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
     colorscheme github
 endif
-
 
 set enc=utf-8
 set fileencoding=utf-8
@@ -78,12 +78,16 @@ nmap <s-space> <PageUp>
 
 inoremap jk <esc>
 
+" Reload current file in buffer
 nmap <F5> :e!<cr>
+
+" Read (source) the commands from current file
 nmap <leader>s :so %<cr>
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
+" Quickly edit and source .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
