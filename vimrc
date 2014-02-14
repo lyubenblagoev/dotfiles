@@ -81,6 +81,9 @@ inoremap jk <esc>
 nmap <F5> :e!<cr>
 nmap <leader>s :so %<cr>
 
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
