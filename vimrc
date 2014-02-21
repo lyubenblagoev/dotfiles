@@ -70,6 +70,9 @@ set scrolloff=2
 " \ is the leader character
 let mapleader = ","
 
+" Use clipboard
+set clipboard=unnamed
+
 " Movement mappings
 nmap k gk
 nmap j gj
@@ -77,6 +80,10 @@ nmap <space> <PageDown>
 nmap <s-space> <PageUp>
 
 inoremap jk <esc>
+
+" Ctrl-Space for omni completion
+imap <c-space> <c-x><c-o>
+set omnifunc=syntaxcomplete#Complete
 
 " Reload current file in buffer
 nmap <F5> :e!<cr>
