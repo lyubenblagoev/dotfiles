@@ -76,8 +76,6 @@ set clipboard=unnamed
 " Movement mappings
 nmap k gk
 nmap j gj
-nmap <space> <PageDown>
-nmap <s-space> <PageUp>
 
 inoremap jk <esc>
 
