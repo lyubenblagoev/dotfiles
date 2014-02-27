@@ -105,11 +105,18 @@ map <leader>q :q <cr>
 map <leader>wq :wq <cr>
 
 " Buffer mappings
-nnoremap <silent> <C-tab> :b#<cr>
 noremap <silent> <F12> :bn<cr>
 noremap <silent> <S-F12> :bp<cr>
 noremap <silent> <leader>bad :1,1000 bd!<cr>
 noremap <silent> <leader>bd :bd<cr>
+
+" Tab mappings
+nnoremap <silent> <C-tab> :tabnext<cr>
+nnoremap <silent> <C-S-tab> :tabprev<cr>
+inoremap <silent> <C-tab> <esc>:tabnext<cr>
+inoremap <silent> <C-S-tab> <esc>:tabprev<cr>
+vnoremap <silent> <C-tab> <esc>:tabnext<cr>
+vnoremap <silent> <C-S-tab> <esc>:tabprev<cr>
 
 " Windows mappings
 noremap <C-h> <C-w>h<cr>
