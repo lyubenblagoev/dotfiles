@@ -133,6 +133,9 @@ imap <silent> <F2> <esc>:NERDTreeToggle <CR>
 map <silent> <F7> :NERDTreeFind <CR>
 imap <silent> <F7> <esc>:NERDTreeFind <CR>
 
+" Easily search for all occurrences of current word
+nnoremap <C-k> :vimgrep /<C-r><c-w>/gj %<CR>:cw<CR>
+
 " Tagbar mappings
 map <F8> :TagbarToggle <CR>
 let g:tagbar_autoclose = 1
