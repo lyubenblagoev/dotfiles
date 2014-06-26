@@ -51,11 +51,11 @@ colorscheme monokai
 
 if has('gui_gtk')
     set guifont=Monaco\ 9
-    colorscheme github
+    colorscheme twilight
 elseif has('gui_win32')
     set guifont=Consolas:h10
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
-    colorscheme github
+    colorscheme twilight
 endif
 
 set enc=utf-8
@@ -77,7 +77,7 @@ set clipboard=unnamed
 nmap k gk
 nmap j gj
 
-inoremap jk <esc>
+inoremap jj <esc>
 
 " Ctrl-Space for omni completion
 imap <c-space> <c-x><c-o>

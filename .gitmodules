@@ -86,3 +86,7 @@
     path = vim/bundle/emmet-vim
     url = https://github.com/mattn/emmet-vim.git
     ignore = dirty
+[submodule "vim/bundle/jellybeans"]
+	path = vim/bundle/jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git
+    ignore = dirty
