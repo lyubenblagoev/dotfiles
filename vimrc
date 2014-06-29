@@ -47,10 +47,10 @@ if has('gui_running')
 endif
 
 colorscheme jellybeans
-set colorcolumn=120
 
 if has('gui_gtk')
     set guifont=Monaco\ 9
+    set colorcolumn=120
 elseif has('gui_win32')
     set guifont=Consolas:h10
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
