@@ -46,16 +46,14 @@ if has('gui_running')
     set cursorline
 endif
 
-" Use monokai on console vim
-colorscheme monokai
+colorscheme jellybeans
+set colorcolumn=120
 
 if has('gui_gtk')
     set guifont=Monaco\ 9
-    colorscheme twilight
 elseif has('gui_win32')
     set guifont=Consolas:h10
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
-    colorscheme twilight
 endif
 
 set enc=utf-8
