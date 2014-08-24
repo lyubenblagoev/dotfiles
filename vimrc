@@ -49,7 +49,7 @@ endif
 colorscheme jellybeans
 
 if has('gui_gtk')
-    set guifont=Monaco\ 9
+    set guifont=Monospace\ 10
     set colorcolumn=120
 elseif has('gui_win32')
     set guifont=Consolas:h10
