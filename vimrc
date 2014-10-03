@@ -58,6 +58,12 @@ elseif has('gui_win32')
     set colorcolumn=120
 endif
 
+if &term =~ '256color'
+    "Disable background color erace so that color schemes render properly when
+    "inside 256-color tmux
+    set t_ut=
+endif
+
 set enc=utf-8
 set fileencoding=utf-8
 
