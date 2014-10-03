@@ -108,6 +108,7 @@ map <C-s> :w<cr>
 inoremap <C-s> <esc>:w<cr>a
 map :Q  :q <cr>
 map <leader>q :q <cr>
+map <leader>x :q! <cr>
 map <leader>wq :wq <cr>
 
 " Buffer mappings
