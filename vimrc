@@ -133,7 +133,7 @@ noremap <C-k> <C-w>k<cr>
 
 " NerdTree
 let NERDTreeWinSize=38
-"let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=1
 " NerdTree mappings
 map <silent> <F2> :NERDTreeToggle <CR>
 imap <silent> <F2> <esc>:NERDTreeToggle <CR>
