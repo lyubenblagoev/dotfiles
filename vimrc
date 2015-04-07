@@ -50,12 +50,10 @@ colorscheme jellybeans
 
 if has('gui_gtk')
     set guifont=Monospace\ 10
-    set colorcolumn=120
     set guioptions+=r
 elseif has('gui_win32')
     set guifont=Consolas:h10
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
-    set colorcolumn=120
 endif
 
 if &term =~ '256color'
