@@ -202,3 +202,15 @@ nmap <leader>cs :CloseSession <CR>
 
 au BufNewFile,BufRead *.gradle setf groovy
 au FileType ruby set ts=2 sts=2 sw=2
+
+" Some useful mappings for GO
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>s <Plug>(go-implements)
+au FileType go nmap <leader>e <Plug>(go-rename)
+
+" Add missing imports on Save (GO)
+let g:go_fmt_command = "goimports"
