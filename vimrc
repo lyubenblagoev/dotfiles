@@ -172,23 +172,6 @@ augroup FileModifiedHighlight
         \ hi FileModified guifg=White guibg=Red gui=bold ctermfg=White ctermbg=Red cterm=bold
 augroup end
 
-hi FileModified guifg=White guibg=Red gui=bold ctermfg=White ctermbg=Red cterm=bold
-
-set statusline=%#FileModified#
-set statusline+=%{&modified?'\[+]':''}%*
-set statusline+=[%t]\ 
-set statusline+=%{IsHelp()}
-set statusline+=%{&readonly?'\ (ro)\ ':''}
-set statusline+=[
-set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
-set statusline+=%{&ff}\|
-set statusline+=%{strlen(&ft)?&ft:'<unknown>'}
-set statusline+=]\ 
-set statusline+=%=
-set statusline+=Col:%c
-set statusline+=,Line:%l
-set statusline+=/%L\ 
-
 " Session settings
 set sessionoptions+=winpos,resize
 set sessionoptions-=options
