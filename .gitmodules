@@ -102,3 +102,7 @@
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
     ignore = dirty
+[submodule "vim/bundle/delim-mate"]
+	path = vim/bundle/delim-mate
+	url = https://github.com/Raimondi/delimitMate.git
+    ignore = dirty
