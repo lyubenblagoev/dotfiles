@@ -87,6 +87,10 @@ inoremap jj <esc>
 imap <c-space> <c-x><c-o>
 set omnifunc=syntaxcomplete#Complete
 
+" Quickly change betweeh frequently used colorschemes (light and dark)
+nmap <silent> <leader>l :colorscheme Tomorrow<cr>
+nmap <silent> <leader>d :colorscheme jellybeans<cr>
+
 " Reload current file in buffer
 nmap <F5> :e!<cr>
 
