@@ -167,17 +167,6 @@ set ic
 " Highlight search
 set hls
 
-" Status line settings
-function! IsHelp()
-    return &buftype == 'help' ? ' (help) ' : ''
-endfunction
-
-augroup FileModifiedHighlight
-    autocmd! ColorScheme *
-        \ syn match FileModified "^tags:.*" |
-        \ hi FileModified guifg=White guibg=Red gui=bold ctermfg=White ctermbg=Red cterm=bold
-augroup end
-
 " Session settings
 set sessionoptions+=winpos,resize
 set sessionoptions-=options
