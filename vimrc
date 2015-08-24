@@ -9,6 +9,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+set mouse=a
+
 " Indent automatically depending on filetype
 filetype plugin indent on
 set autoindent
