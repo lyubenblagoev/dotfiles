@@ -44,9 +44,8 @@ if has('gui_running')
 
     " Set initial gVim windows size
     set lines=41 columns=128
-
-    set cursorline
 endif
+set cursorline
 
 colorscheme jellybeans
 
