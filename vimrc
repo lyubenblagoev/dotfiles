@@ -115,8 +115,8 @@ map <leader>x :q! <cr>
 map <leader>wq :wq <cr>
 
 " Buffer mappings
-noremap <silent> <F12> :bn<cr>
-noremap <silent> <S-F12> :bp<cr>
+noremap <silent> <C-l> :bn<cr>
+noremap <silent> <C-h> :bp<cr>
 noremap <silent> <leader>bad :1,1000 bd!<cr>
 noremap <silent> <leader>bd :bd<cr>
 
@@ -127,12 +127,6 @@ inoremap <silent> <C-tab> <esc>:tabnext<cr>
 inoremap <silent> <C-S-tab> <esc>:tabprev<cr>
 vnoremap <silent> <C-tab> <esc>:tabnext<cr>
 vnoremap <silent> <C-S-tab> <esc>:tabprev<cr>
-
-" Windows mappings
-noremap <C-h> <C-w>h<cr>
-noremap <C-l> <C-w>l<cr>
-noremap <C-j> <C-w>j<cr>
-noremap <C-k> <C-w>k<cr>
 
 " NerdTree
 let NERDTreeWinSize=38
