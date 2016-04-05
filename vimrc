@@ -175,6 +175,8 @@ nmap <leader>os :OpenSession
 nmap <leader>ss :SaveSession 
 nmap <leader>cs :CloseSession <CR>
 
+map gd :YcmCompleter GoToDefinition<CR>
+
 au BufNewFile,BufRead *.gradle setf groovy
 au FileType ruby set ts=2 sts=2 sw=2
 
