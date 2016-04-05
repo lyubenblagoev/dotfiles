@@ -106,3 +106,7 @@
 	path = vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
     ignore = dirty
+[submodule "vim/bundle/you-complete-me"]
+	path = vim/bundle/you-complete-me
+	url = https://github.com/Valloric/YouCompleteMe.git
+    ignore = dirty
