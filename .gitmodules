@@ -106,3 +106,7 @@
 	path = vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
     ignore = dirty
+[submodule "vim/bundle/typescript-vim"]
+	path = vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+    ignore = dirty
