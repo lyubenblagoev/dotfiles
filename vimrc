@@ -191,3 +191,11 @@ au FileType go nmap <leader>e <Plug>(go-rename)
 
 " Add missing imports on Save (GO)
 let g:go_fmt_command = "goimports"
+
+" Remap snipmate trigger key (tab is used for completion)
+" :help snipMate-remap
+ino <silent> <leader>j <esc>a<c-r>=TriggerSnippet()<cr>
+snor <silent> <leader>j <esc>i<right><c-r>=TriggerSnippet()<cr>
+ino <silent> <leader><s-j> <c-r>=BackwardsSnippet()<cr>
+snor <silent> <leader><s-j> <esc>i<right><c-r>=BackwardsSnippet()<cr>
+
