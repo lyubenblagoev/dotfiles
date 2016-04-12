@@ -8,12 +8,12 @@
     local = yellow
     remote = green
 [color "diff"]
-    meta = yellow bold
+    meta = yellow dim bold
     frag = magenta bold
     old = red bold
-    new = green bold
+    new = green dim  bold
 [color "status"]
-    added = yellow
+    added = yellow dim
     changed = green
     untracked = cyan
 [alias]
