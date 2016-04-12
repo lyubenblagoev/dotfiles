@@ -47,7 +47,7 @@ if has('gui_running')
 endif
 set cursorline
 
-colorscheme jellybeans
+colorscheme Tomorrow
 
 if has('gui_gtk')
     set guifont=Monospace\ 10
