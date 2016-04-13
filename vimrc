@@ -160,17 +160,6 @@ set ic
 " Highlight search
 set hls
 
-" Session settings
-set sessionoptions+=winpos,resize
-set sessionoptions-=options
-let g:session_autoload='no'
-let g:session_autosave='yes'
-let g:session_default_to_last=0
-
-nmap <leader>os :OpenSession 
-nmap <leader>ss :SaveSession 
-nmap <leader>cs :CloseSession <CR>
-
 map gd :YcmCompleter GoToDefinition<CR>
 
 let g:ycm_autoclose_preview_window_after_completion = 1

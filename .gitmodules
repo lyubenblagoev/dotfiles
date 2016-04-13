@@ -58,10 +58,6 @@
     path = vim/bundle/nerdcommenter
     url = https://github.com/scrooloose/nerdcommenter.git
     ignore = dirty
-[submodule "vim/bundle/vim-session"]
-    path = vim/bundle/vim-session
-    url = https://github.com/xolox/vim-session.git
-    ignore = dirty
 [submodule "vim/bundle/tagbar"]
     path = vim/bundle/tagbar
     url = https://github.com/majutsushi/tagbar.git
