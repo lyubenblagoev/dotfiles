@@ -114,6 +114,10 @@
 	path = vim/bundle/you-complete-me
 	url = https://github.com/Valloric/YouCompleteMe.git
     ignore = dirty
+[submodule "vim/bundle/ycm-generator"]
+	path = vim/bundle/ycm-generator
+	url = https://github.com/rdnetto/YCM-Generator
+    ignore = dirty
 [submodule "vim/bundle/vim-tomorrow-theme"]
 	path = vim/bundle/vim-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme
