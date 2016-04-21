@@ -49,6 +49,10 @@ set cursorline
 
 colorscheme Tomorrow
 
+" Custom commands to easily switch light and dark colorschemes
+command! DarkScheme colorscheme Tomorrow-Night
+command! LightScheme colorscheme Tomorrow
+
 if has('gui_gtk')
     set guifont=Monospace\ 10
     set guioptions+=r
