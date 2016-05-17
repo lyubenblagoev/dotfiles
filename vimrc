@@ -47,7 +47,7 @@ if has('gui_running')
 endif
 set cursorline
 
-colorscheme Tomorrow
+colorscheme Tomorrow-Night
 
 " Custom commands to easily switch light and dark colorschemes
 command! DarkScheme colorscheme Tomorrow-Night
