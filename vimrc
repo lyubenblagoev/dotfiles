@@ -187,3 +187,10 @@ au FileType go nmap <leader>e <Plug>(go-rename)
 
 " Add missing imports on Save (GO)
 let g:go_fmt_command = "goimports"
+
+" Workaround for delimitMate to expand cr (delimitMate_expand_cr=1 is not working) 
+" This is a bit more complicated than {<CR> {<CR>}<ESC>O, but it
+" places closing braces more nicely (especially when using () or [])
+inoremap {<CR> {}<ESC>i<CR><ESC>O
+inoremap (<CR> ()<ESC>i<CR><ESC>O
+inoremap [<CR> []<ESC>i<CR><ESC>O
