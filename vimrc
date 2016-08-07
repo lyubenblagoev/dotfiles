@@ -53,6 +53,7 @@ colorscheme Tomorrow-Night
 command! DarkScheme colorscheme Tomorrow-Night
 command! LightScheme colorscheme Tomorrow
 
+let g:airline_powerline_fonts = 1
 if has('gui_gtk')
     set guifont=Monospace\ 10
     set guioptions+=r
