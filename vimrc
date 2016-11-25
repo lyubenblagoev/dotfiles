@@ -165,15 +165,6 @@ set ic
 " Highlight search
 set hls
 
-map gd :YcmCompleter GoToDefinition<CR>
-
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-
-
 au BufNewFile,BufRead *.gradle setf groovy
 au FileType ruby set ts=2 sts=2 sw=2
 
