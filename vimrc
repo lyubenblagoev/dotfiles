@@ -55,7 +55,7 @@ command! LightScheme colorscheme Tomorrow
 
 let g:airline_powerline_fonts = 1
 if has('gui_gtk')
-    set guifont=Monospace\ 10
+    set guifont=Consolas\ 10
     set guioptions+=r
 elseif has('gui_win32')
     set guifont=Consolas:h10
