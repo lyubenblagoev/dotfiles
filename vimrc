@@ -80,7 +80,6 @@ if has('gui_gtk')
     set guioptions+=r
 elseif has('gui_win32')
     set guifont=Consolas:h10
-    map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
 endif
 
 if &term =~ '256color'
