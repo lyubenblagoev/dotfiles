@@ -20,8 +20,3 @@ fi
 ln -s $DOT_DIR/vimrc $HOME/.vimrc
 ln -s $DOT_DIR/vim $HOME/.vim
 ln -s $DOT_DIR/gitconfig $HOME/.gitconfig
-
-# Init git submodules
-cd $DOT_DIR
-git submodule init && git submodule update
-cd $INITIAL_DIR

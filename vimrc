@@ -1,8 +1,33 @@
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'c9s/bufexplorer'
+Plugin 'msanders/snipmate.vim'
+Plugin 'justinmk/vim-ipmotion'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'jwhitley/vim-matchit'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'fatih/vim-go'
+Plugin 'Raimondi/delimitMate'
+Plugin 'chriskempson/vim-tomorrow-theme'
+
+call vundle#end()
+
+filetype plugin indent on
+
 syntax on
 
-silent! call pathogen#infect()
-silent! call pathogen#helptags()
+set autoindent
 
 set tabstop=4
 set softtabstop=4
@@ -10,10 +35,6 @@ set shiftwidth=4
 set expandtab
 
 set mouse=a
-
-" Indent automatically depending on filetype
-filetype plugin indent on
-set autoindent
 
 set ruler
 set nobackup
@@ -108,8 +129,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 " Save and quit mappings
 map <leader>w :w <cr>
-map <C-s> :w<cr>
-inoremap <C-s> <esc>:w<cr>a
 map :Q  :q <cr>
 map <leader>q :q <cr>
 map <leader>x :q! <cr>
@@ -120,14 +139,6 @@ noremap <silent> <C-l> :bn<cr>
 noremap <silent> <C-h> :bp<cr>
 noremap <silent> <leader>bad :1,1000 bd!<cr>
 noremap <silent> <leader>bd :bd<cr>
-
-" Tab mappings
-nnoremap <silent> <C-tab> :tabnext<cr>
-nnoremap <silent> <C-S-tab> :tabprev<cr>
-inoremap <silent> <C-tab> <esc>:tabnext<cr>
-inoremap <silent> <C-S-tab> <esc>:tabprev<cr>
-vnoremap <silent> <C-tab> <esc>:tabnext<cr>
-vnoremap <silent> <C-S-tab> <esc>:tabprev<cr>
 
 " NerdTree
 let NERDTreeWinSize=38
@@ -161,9 +172,6 @@ set numberwidth=5
 
 " Case insentitive search 
 set ic
-
-" Highlight search
-set hls
 
 au BufNewFile,BufRead *.gradle setf groovy
 au FileType ruby set ts=2 sts=2 sw=2
