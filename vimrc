@@ -20,6 +20,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fatih/vim-go'
 Plugin 'Raimondi/delimitMate'
 Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'mhartington/oceanic-next'
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
@@ -67,9 +68,14 @@ if has('gui_running')
     " Set initial gVim windows size
     set lines=41 columns=128
 endif
+if (has('termguicolors'))
+    set termguicolors
+endif
 set cursorline
 
-colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
+colorscheme OceanicNext
+let g:airline_theme = 'oceanicnext'
 
 " Custom commands to easily switch light and dark colorschemes
 command! DarkScheme colorscheme Tomorrow-Night
