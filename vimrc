@@ -77,7 +77,7 @@ endif
 set cursorline
 
 "colorscheme Tomorrow-Night
-colorscheme OceanicNext
+silent! colorscheme OceanicNext
 let g:airline_theme = 'oceanicnext'
 
 " Custom commands to easily switch light and dark colorschemes
