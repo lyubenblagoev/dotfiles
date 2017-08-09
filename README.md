@@ -3,6 +3,16 @@ Configuration files, mostly for [Vim].
 
 ## Installation
 
+### Automatic installation
+
+Run the following command to automatically clone and configure everything:
+
+```bash
+curl -L https://raw.githubusercontent.com/lyubenblagoev/dotfiles/master/install.sh | bash
+```
+
+### Manual installation
+
 Clone the repository in a folder named `.dotfiles` located in your home directory:
 
 ```bash
