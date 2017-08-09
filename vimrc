@@ -22,6 +22,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'mhartington/oceanic-next'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'PProvost/vim-ps1'
 Plugin 'leafgarland/typescript-vim'
 
