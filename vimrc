@@ -20,6 +20,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fatih/vim-go'
 Plugin 'Raimondi/delimitMate'
 Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
