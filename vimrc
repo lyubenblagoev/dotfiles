@@ -22,6 +22,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'mhartington/oceanic-next'
 Plugin 'tpope/vim-fugitive'
+Plugin 'PProvost/vim-ps1'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
