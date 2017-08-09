@@ -81,10 +81,26 @@ colorscheme OceanicNext
 let g:airline_theme = 'oceanicnext'
 
 " Custom commands to easily switch light and dark colorschemes
-command! DarkScheme colorscheme Tomorrow-Night
-command! LightScheme colorscheme Tomorrow
+function! DarkScheme() 
+    colorscheme OceanicNext
+    AirlineTheme oceanicnext
+endfunction
+command! Dark :call DarkScheme()
+
+function! DarkerScheme()
+    colorscheme Tomorrow-Night
+    AirlineTheme tomorrow
+endfunction
+command! Darker :call DarkerScheme()
+
+function! LightScheme()
+    colorscheme Tomorrow
+    AirlineTheme tomorrow
+endfunction
+command! Light :call LightScheme()
 
 let g:airline_powerline_fonts = 1
+
 if has('gui_gtk')
     set guifont=Consolas\ 10
     set guioptions+=r
