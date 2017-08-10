@@ -79,6 +79,7 @@ set cursorline
 " Custom commands to easily switch light and dark colorschemes
 function! DarkScheme() 
     colorscheme OceanicNext
+    highlight Search guibg=#005544 guifg=#ffffff
 endfunction
 command! Dark :call DarkScheme()
 
