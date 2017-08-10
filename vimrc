@@ -76,28 +76,24 @@ if (has('termguicolors'))
 endif
 set cursorline
 
-"colorscheme Tomorrow-Night
-silent! colorscheme OceanicNext
-let g:airline_theme = 'oceanicnext'
-
 " Custom commands to easily switch light and dark colorschemes
 function! DarkScheme() 
     colorscheme OceanicNext
-    AirlineTheme oceanicnext
 endfunction
 command! Dark :call DarkScheme()
 
 function! DarkerScheme()
     colorscheme Tomorrow-Night
-    AirlineTheme tomorrow
 endfunction
 command! Darker :call DarkerScheme()
 
 function! LightScheme()
     colorscheme Tomorrow
-    AirlineTheme tomorrow
 endfunction
 command! Light :call LightScheme()
+
+" Default colorscheme
+silent! call DarkScheme()
 
 let g:airline_powerline_fonts = 1
 
