@@ -69,7 +69,7 @@ if has('gui_running')
     set guioptions-=L
 
     " Set initial gVim windows size
-    set lines=41 columns=128
+    set lines=41 columns=140
 endif
 if (has('termguicolors'))
     set termguicolors
@@ -99,7 +99,7 @@ silent! call DarkScheme()
 let g:airline_powerline_fonts = 1
 
 if has('gui_gtk')
-    set guifont=Consolas\ 10
+    set guifont=Ubuntu\ Mono\ 11
     set guioptions+=r
 elseif has('gui_win32')
     set guifont=Consolas:h10
