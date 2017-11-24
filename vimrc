@@ -196,7 +196,6 @@ set numberwidth=5
 set ic
 
 au BufNewFile,BufRead *.gradle setf groovy
-au FileType ruby set ts=2 sts=2 sw=2
 
 " Some useful mappings for GO
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -206,6 +205,20 @@ au FileType go nmap <leader>gd <Plug>(go-doc)
 au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>s <Plug>(go-implements)
 au FileType go nmap <leader>e <Plug>(go-rename)
+
+" Various file formats
+au Filetype go setlocal noet ts=4 sw=4
+au FileType c setlocal noet ts=4 sw=4 tw=80
+au FileType h setlocal noet ts=4 sw=4 tw=80
+au FileType cpp setlocal noet ts=4 sw=4 tw=80
+au FileType sh setlocal et ts=4 sw=4
+au FileType js setlocal noet ts=4 sw=4
+au FileType jsx setlocal noet ts=4 sw=4
+au FileType html setlocal noet ts=4 sw=4
+au FileType sql setlocal noet ts=4 sw=4
+au FileType yaml setlocal noet ts=2 sw=2
+au FileType yml setlocal noet ts=2 sw=2
+au FileType ruby set ts=2 sts=2 sw=2
 
 " Add missing imports on Save (GO)
 let g:go_fmt_command = "goimports"
