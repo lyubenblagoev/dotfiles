@@ -135,6 +135,9 @@ set omnifunc=syntaxcomplete#Complete
 " Reload current file in buffer
 nmap <F5> :e!<cr>
 
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+
 " Read (source) the commands from current file
 nmap <leader>s :so %<cr>
 
