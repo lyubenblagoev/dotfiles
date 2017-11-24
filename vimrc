@@ -57,10 +57,6 @@ set noswapfile
 set visualbell
 set hidden
 
-" Don't wait so long for the next keypress (particularly in ambigious Leader
-" situations).
-set timeoutlen=500
-
 if has('gui_running')
     " Disabling GUI options works one by one (see :help guioptions)
     set guioptions-=T
