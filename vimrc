@@ -156,6 +156,9 @@ map <leader>q :q <cr>
 map <leader>x :q! <cr>
 map <leader>wq :wq <cr>
 
+" Use w!! to write file as root
+cmap w!! %!sudo tee > /dev/null %
+
 " Buffer mappings
 noremap <silent> <C-l> :bn<cr>
 noremap <silent> <C-h> :bp<cr>
