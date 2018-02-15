@@ -213,6 +213,7 @@ au Filetype go setlocal noet ts=4 sw=4
 au FileType c setlocal noet ts=4 sw=4 tw=80
 au FileType h setlocal noet ts=4 sw=4 tw=80
 au FileType cpp setlocal noet ts=4 sw=4 tw=80
+au FileType java setlocal noet ts=4 sw=4
 au FileType sh setlocal et ts=4 sw=4
 au FileType js setlocal noet ts=4 sw=4
 au FileType jsx setlocal noet ts=4 sw=4
