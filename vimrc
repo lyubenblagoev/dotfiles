@@ -126,6 +126,18 @@ set clipboard=unnamed
 nmap k gk
 nmap j gj
 
+" Split movements
+noremap <C-j> <C-w><C-j>
+noremap <C-k> <C-w><C-k>
+noremap <C-h> <C-w><C-h>
+noremap <C-l> <C-w><C-l>
+
+" Buffer mappings
+nmap <tab> <Esc>:bnext!<CR>
+nmap <S-tab> <Esc>:bprev!<CR>
+noremap <silent> <leader>bad :1,1000 bd!<cr>
+noremap <silent> <leader>bd :bd<cr>
+
 inoremap jj <esc>
 
 " Ctrl-Space for omni completion
@@ -158,12 +170,6 @@ map <leader>wq :wq <cr>
 " Use w!! to write file as root
 cmap w!! %!sudo tee > /dev/null %
 
-" Buffer mappings
-noremap <silent> <C-l> :bn<cr>
-noremap <silent> <C-h> :bp<cr>
-noremap <silent> <leader>bad :1,1000 bd!<cr>
-noremap <silent> <leader>bd :bd<cr>
-
 " NerdTree
 let NERDTreeWinSize=38
 let NERDTreeQuitOnOpen=1
@@ -178,7 +184,7 @@ map <silent> <leader>nto :let NERDTreeQuitOnOpen=0<CR>
 map <silent> <leader>ntc :let NERDTreeQuitOnOpen=1<CR>
 
 " Easily search for all occurrences of current word
-nnoremap <C-k> :vimgrep /<C-r><c-w>/gj %<CR>:cw<CR>
+nnoremap <F3> :vimgrep /<C-r><c-w>/gj %<CR>:cw<CR>
 
 " Tagbar mappings
 map <F8> :TagbarToggle <CR>
