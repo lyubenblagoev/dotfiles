@@ -225,8 +225,8 @@ au FileType js setlocal noet ts=4 sw=4
 au FileType jsx setlocal noet ts=4 sw=4
 au FileType html setlocal noet ts=4 sw=4
 au FileType sql setlocal noet ts=4 sw=4
-au FileType yaml setlocal noet ts=2 sw=2
-au FileType yml setlocal noet ts=2 sw=2
+au FileType yaml setlocal et ts=2 sw=2
+au FileType yml setlocal et ts=2 sw=2
 au FileType ruby set ts=2 sts=2 sw=2
 
 " Add missing imports on Save (GO)
