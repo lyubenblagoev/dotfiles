@@ -95,7 +95,7 @@ silent! call DarkScheme()
 let g:airline_powerline_fonts = 1
 
 if has('gui_gtk')
-    set guifont=Ubuntu\ Mono\ 12
+    set guifont=Ubuntu\ Mono\ 11
     set guioptions+=r
 elseif has('gui_win32')
     set guifont=Consolas:h10
