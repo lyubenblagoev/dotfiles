@@ -238,3 +238,8 @@ let g:go_fmt_command = "goimports"
 inoremap {<CR> {}<ESC>i<CR><ESC>O
 inoremap (<CR> ()<ESC>i<CR><ESC>O
 inoremap [<CR> []<ESC>i<CR><ESC>O
+
+" Allow overrides from a local configuration file
+if filereadable(expand('~/.vimrc_local'))
+    source ~/.vimrc_local
+end
