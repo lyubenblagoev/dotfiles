@@ -19,6 +19,7 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fatih/vim-go'
 Plugin 'Raimondi/delimitMate'
+Plugin 'ajh17/Spacegray.vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'mhartington/oceanic-next'
 Plugin 'tpope/vim-fugitive'
@@ -80,7 +81,7 @@ endfunction
 command! Dark :call DarkScheme()
 
 function! DarkerScheme()
-    colorscheme Tomorrow-Night
+    colorscheme spacegray
 endfunction
 command! Darker :call DarkerScheme()
 
