@@ -85,6 +85,7 @@ command! Darker :call DarkerScheme()
 
 function! LightScheme()
     colorscheme Tomorrow
+    highlight StatusLine guibg=#555555 guifg=#eeeeee
 endfunction
 command! Light :call LightScheme()
 
