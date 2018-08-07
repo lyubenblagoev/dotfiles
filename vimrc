@@ -15,8 +15,6 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jwhitley/vim-matchit'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fatih/vim-go'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ajh17/Spacegray.vim'
@@ -92,8 +90,6 @@ command! Light :call LightScheme()
 
 " Default colorscheme
 silent! call DarkScheme()
-
-let g:airline_powerline_fonts = 1
 
 if has('gui_gtk')
     set guifont=Ubuntu\ Mono\ 11
