@@ -108,9 +108,6 @@ endif
 set enc=utf-8
 set fileencoding=utf-8
 
-" Always display the status line
-set laststatus=2
-
 " Scrolling
 set scrolloff=2
 
