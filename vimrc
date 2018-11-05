@@ -31,6 +31,8 @@ filetype plugin indent on
 
 syntax on
 
+set title
+
 set autoindent
 
 set tabstop=4
