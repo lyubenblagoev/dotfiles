@@ -92,7 +92,7 @@ endfunction
 command! Light :call LightScheme()
 
 " Default colorscheme
-silent! call DarkScheme()
+silent! call DarkerScheme()
 
 if has('gui_gtk')
     set guifont=Ubuntu\ Mono\ 11
