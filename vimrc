@@ -95,7 +95,7 @@ command! Light :call LightScheme()
 silent! call DarkerScheme()
 
 if has('gui_gtk')
-    set guifont=Ubuntu\ Mono\ 11
+    set guifont=Source\ Code\ Pro\ 10
     set guioptions+=r
 elseif has('gui_win32')
     set guifont=Consolas:h10
