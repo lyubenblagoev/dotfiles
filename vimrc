@@ -82,6 +82,7 @@ command! Dark :call DarkScheme()
 
 function! DarkerScheme()
     colorscheme spacegray
+    highlight Search guibg=#442828 guifg=#bbbbbb
 endfunction
 command! Darker :call DarkerScheme()
 
