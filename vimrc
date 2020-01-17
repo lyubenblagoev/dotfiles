@@ -230,12 +230,8 @@ au FileType ruby set ts=2 sts=2 sw=2
 " Add missing imports on Save (GO)
 let g:go_fmt_command = "goimports"
 
-" Workaround for delimitMate to expand cr (delimitMate_expand_cr=1 is not working) 
-" This is a bit more complicated than {<CR> {<CR>}<ESC>O, but it
-" places closing braces more nicely (especially when using () or [])
-inoremap {<CR> {}<ESC>i<CR><ESC>O
-inoremap (<CR> ()<ESC>i<CR><ESC>O
-inoremap [<CR> []<ESC>i<CR><ESC>O
+let g:delimitMate_expand_cr=1
+let g:delimitMate_expand_space=1
 
 " Allow overrides from a local configuration file
 if filereadable(expand('~/.vimrc_local'))
