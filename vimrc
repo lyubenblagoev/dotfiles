@@ -69,9 +69,6 @@ if has('gui_running')
     " Set initial gVim windows size
     set lines=41 columns=140
 endif
-if (has('termguicolors'))
-    set termguicolors
-endif
 set cursorline
 
 " Custom commands to easily switch light and dark colorschemes
