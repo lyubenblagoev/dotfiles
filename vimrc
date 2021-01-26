@@ -148,7 +148,7 @@ set omnifunc=syntaxcomplete#Complete
 nmap <F5> :e!<cr>
 
 nmap <leader>l :set list!<CR>
-set listchars=space:.,tab:▸\ ,eol:¬
+set listchars=space:·,tab:▸\ ,eol:¬
 
 " Read (source) the commands from current file
 nmap <leader>s :so %<cr>
