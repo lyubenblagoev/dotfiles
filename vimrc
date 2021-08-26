@@ -229,6 +229,10 @@ au FileType yaml setlocal et ts=2 sw=2
 au FileType yml setlocal et ts=2 sw=2
 au FileType ruby set ts=2 sts=2 sw=2
 
+" Enable line wrapping for txt and markdown files
+au FileType text setlocal wrap lbr
+au FileType markdown setlocal wrap lbr
+
 " Add missing imports on Save (GO)
 let g:go_fmt_command = "goimports"
 
