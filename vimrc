@@ -24,6 +24,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'PProvost/vim-ps1'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'vimpostor/vim-lumen'
 
 call vundle#end()
 
@@ -243,3 +244,7 @@ let g:delimitMate_expand_space=1
 if filereadable(expand('~/.vimrc_local'))
     source ~/.vimrc_local
 end
+
+" Configure vim-lumen
+au User LumenLight :call LightScheme()
+au User LumenDark :call DarkerScheme()
