@@ -17,8 +17,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'Raimondi/delimitMate'
-Plugin 'ajh17/Spacegray.vim'
-Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'https://git.sr.ht/~ackyshake/spacegray.vim'
+Plugin 'chriskempson/base16-vim'
 Plugin 'mhartington/oceanic-next'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -86,7 +86,7 @@ endfunction
 command! Darker :call DarkerScheme()
 
 function! LightScheme()
-    colorscheme Tomorrow
+    colorscheme base16-github
     highlight StatusLine guibg=#555555 guifg=#eeeeee
 endfunction
 command! Light :call LightScheme()
