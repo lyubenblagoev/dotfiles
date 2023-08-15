@@ -241,8 +241,8 @@ let g:delimitMate_expand_cr=1
 let g:delimitMate_expand_space=1
 
 " Configure vim-lumen
-au User LumenLight :call LightScheme()
-au User LumenDark :call DarkerScheme()
+"au User LumenLight :call LightScheme()
+"au User LumenDark :call DarkerScheme()
 
 " Allow overrides from a local configuration file
 if filereadable(expand('~/.vimrc_local'))
