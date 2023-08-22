@@ -19,7 +19,6 @@ Plugin 'fatih/vim-go'
 Plugin 'Raimondi/delimitMate'
 Plugin 'https://git.sr.ht/~ackyshake/spacegray.vim'
 Plugin 'chriskempson/base16-vim'
-Plugin 'mhartington/oceanic-next'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'PProvost/vim-ps1'
@@ -73,17 +72,11 @@ endif
 set cursorline
 
 " Custom commands to easily switch light and dark colorschemes
-function! DarkScheme() 
-    colorscheme OceanicNext
-    highlight Search guibg=#005544 guifg=#ffffff
-endfunction
-command! Dark :call DarkScheme()
-
-function! DarkerScheme()
+function! DarkScheme()
     colorscheme spacegray
     highlight Search guibg=#442828 guifg=#bbbbbb
 endfunction
-command! Darker :call DarkerScheme()
+command! Dark :call DarkScheme()
 
 function! LightScheme()
     colorscheme base16-github
@@ -92,7 +85,7 @@ endfunction
 command! Light :call LightScheme()
 
 " Default colorscheme
-silent! call DarkerScheme()
+silent! call DarkScheme()
 
 if has('gui_gtk')
     set guifont=Source\ Code\ Pro\ 10
@@ -242,7 +235,7 @@ let g:delimitMate_expand_space=1
 
 " Configure vim-lumen
 "au User LumenLight :call LightScheme()
-"au User LumenDark :call DarkerScheme()
+"au User LumenDark :call DarkScheme()
 
 " Allow overrides from a local configuration file
 if filereadable(expand('~/.vimrc_local'))
