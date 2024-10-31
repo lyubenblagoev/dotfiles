@@ -50,7 +50,6 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-set nowrapscan
 set showmatch
 set backspace=indent,eol,start
 set history=50
