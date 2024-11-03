@@ -21,7 +21,7 @@ if [[ -d ~/.vim ]]; then
 fi
 ln -s ~/.dotfiles/vim ~/.vim
 
-if [[ -e ~/.gitconfig ]]; then
+if [[ -e ~/.vimrc ]]; then
     echo "Backing up .vimrc to .vimrc.bak"
     mv .vimrc .vimrc.bak
 fi
