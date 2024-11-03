@@ -14,15 +14,42 @@
     new = green dim  bold
 [alias]
     st = status
+    a = add
+    aa = add -A
+    ap = add -p
     ci = commit
+    co = checkout
+    ca = commit -a
+    cav = commit -a -v
+    cam = commit --amend
+    camr = commit --amend --reset-author
+    cv = commit -v
+    cp = commit -p
+    cpv = commit -p -v
+    rb = rebase
+    rbi = rebase -i
+    rbc = rebase --continue
+    rba = rebase --abort
+    ff = merge --ff-only
+    nf = merge --no-ff
+    sq = merge --squash
+    cl = clone
     br = branch
-    co = checkout 
+    ba = branch -a
+    bm = branch --merged
+    bn = branch --no-merged
+    co = checkout
     df = diff
-    dc = diff --cached 
+    dc = diff --cached
     lg = log -p
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    sl = shrotlog
+    sls = shortlog -s
     ls = ls-files
+    pl = pull
+    pr = pull --rebase
+    ps = push
 [push]
     default = simple
 [credential]
