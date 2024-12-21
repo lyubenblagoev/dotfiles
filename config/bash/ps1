@@ -1,15 +1,15 @@
-theme_color="32m"
-host_color="${host_color}"
-symbol=" $"
-
 if [[ "$(id -u)" == "0" ]]; then
     theme_color="31m"
     host_color="33m"
-    symbol=" #"
+    end_symbol="#"
+else
+    theme_color="32m"
+    host_color="34m"
+    end_symbol="$"
 fi
 
 show_git_branch() {
     type -t "__git_ps1" &> /dev/null && __git_ps1
 }
 
-PS1="\[\033[1;${theme_color}\]\342\224\214\342\224\200[\[\033[1;37m\]\u\[\033[01;${theme_color}\]@\[\033[01;${host_color}\]\h\[\033[1;${theme_color}\]]\342\224\200[\[\033[1;37m\]\w\033[93;1m\$(show_git_branch)\[\033[1;${theme_color}\]]\n\[\033[1;${theme_color}\]\342\224\224\342\224\200\342\224\200\342\225\274 [\[\e[01;33m\]*\[\e[01;${theme_color}\]]\${symbol} \[\e[0m\]"
+PS1="\[\033[1;${theme_color}\]\342\224\214\342\224\200[\[\033[1;37m\]\u\[\033[01;${theme_color}\]@\[\033[01;${host_color}\]\h\[\033[1;${theme_color}\]]\342\224\200[\[\033[1;37m\]\w\033[93;1m\$(show_git_branch)\[\033[1;${theme_color}\]]\n\[\033[1;${theme_color}\]\342\224\224\342\224\200\342\224\200\342\225\274[\[\e[01;33m\]*\[\e[01;${theme_color}\]]\${end_symbol} \[\e[0m\]"
