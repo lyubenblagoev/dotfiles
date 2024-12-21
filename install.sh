@@ -40,7 +40,7 @@ if [[ -e ~/.gitconfig ]]; then
     echo "Backing up .gitconfig to .gitconfig.bak"
     mv ~/.gitconfig ~/.gitconfig.bak
 elif [[ -L ~/.gitconfig ]]; then
-    rm ~/.gitignore
+    rm ~/.gitconfig
 fi
 ln -s ~/.dotfiles/config/git/gitconfig ~/.gitconfig
 
