@@ -17,6 +17,8 @@ if ! grep -i .dotfiles\/config\/bash\/environment ~/.bashrc > /dev/null; then
     echo "==> Setting-up Bash environment"
     sed -i "$ a [ -r ~/.dotfiles/config/bash/environment ] && . ~/.dotfiles/config/bash/environment" ~/.bashrc
 fi
+mkdir -p ~/.dotfiles/config/local/bash
+cp ~/.dotfiles/config/bash/env.template ~/.dotfiles/config/local/bash/env
 
 echo "==> Cloning Vundle into vim/bundle"
 mkdir -p ~/.dotfiles/config/local/vim/bundle
