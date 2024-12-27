@@ -127,6 +127,10 @@ setup_git() {
         mkdir -p ~/.config/git
     fi
     create_symlink ~/.config/git/config ~/.dotfiles/config/git/config
+
+    if ! type -t "__git_ps1" > /dev/null 2>&1; then
+        curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.dotfiles/config/local/git/git-prompt.sh
+    fi
 }
 
 main() {
