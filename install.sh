@@ -1,59 +1,149 @@
 #!/bin/bash
+#
+# This script should be run via curl:
+#   curl -L https://raw.githubusercontent.com/lyubenblagoev/dotfiles/master/install.sh | bash
+# or via wget: 
+#   wget -qO- https://raw.githubusercontent.com/lyubenblagoev/dotfiles/master/install.sh | bash
+#
 
 set -e
 
-if [[ -d ~/.dotfiles ]]; then
-    echo "==> ~/.dotfiles already exists, update and reinstall"
-    rm -rf ~/.dotfiles/config/local
-    cd ~/.dotfiles
-    git pull origin master
-    cd -
-else
-    echo "==> Cloning lyubenblagoev/dotfiles into ~/.dotfiles"
-    git clone https://github.com/lyubenblagoev/dotfiles.git ~/.dotfiles
-fi
+# Configure colors
+BOLD="\e[1m"
+RED="\e[31m"
+YELLOW="\e[93m"
+BLUE="\e[34m"
+RESET="\e[0m"
 
-if ! grep -i .dotfiles\/config\/bash\/environment ~/.bashrc > /dev/null; then
-    echo "==> Setting-up Bash environment"
-    sed -i "$ a [ -r ~/.dotfiles/config/bash/environment ] && . ~/.dotfiles/config/bash/environment" ~/.bashrc
-fi
-mkdir -p ~/.dotfiles/config/local/bash
-cp ~/.dotfiles/config/bash/env.template ~/.dotfiles/config/local/bash/env
+# Default settings
+REPO=${REPO:-lyubenblagoev/dotfiles}
+REMOTE=${REMOTE:-https://github.com/${REPO}.git}
+BRANCH=${BRANCH:-master}
+PURGE_LOCAL=false
 
-echo "==> Cloning Vundle into vim/bundle"
-mkdir -p ~/.dotfiles/config/local/vim/bundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/config/local/vim/bundle/Vundle.vim
+log() {
+    echo -e "${BOLD}${BLUE}$*${RESET}"
+}
 
-echo "==> Creating symbolic links"
+warn() {
+    echo -e "${BOLD}${YELLOW}$*${RESET}"
+}
 
-# .vim directory symlink
-if [[ -d ~/.vim ]]; then
-    echo " |-- ~/.vim has been renamed to ~/.vim.bak"
-    mv ~/.vim ~/.vim.bak
-elif [[ -L ~/.vim ]]; then
-    rm ~/.vim
-fi
-ln -s ~/.dotfiles/config/local/vim ~/.vim
+err() {
+    echo -e "${BOLD}${RED}Error: $*${RESET}\n" >&2
+    exit 1
+}
 
-# .vimrc symlink
-if [[ -e ~/.vimrc ]]; then
-    echo " |-- ~/.vimrc has been renamed to .vimrc.bak"
-    mv ~/.vimrc ~/.vimrc.bak
-elif [[ -L ~/.vimrc ]]; then
-    rm ~/.vimrc
-fi
-ln -s ~/.dotfiles/config/vim/vimrc ~/.vimrc
+confirm() {
+    echo -en "${BOLD}${YELLOW}$*? [y/N] ${RESET}"
+    read -r opt
+    case $opt in
+        y*|Y*) return 0 ;;
+        *) return 1 ;;
+    esac
+}
 
-# .gitconfig symlink
-if [[ -e ~/.gitconfig ]]; then
-    echo " |-- ~/.gitconifg has been renamed to .gitconfig.bak"
-    mv ~/.gitconfig ~/.gitconfig.bak
-elif [[ -L ~/.gitconfig ]]; then
-    rm ~/.gitconfig
-fi
-ln -s ~/.dotfiles/config/git/gitconfig ~/.gitconfig
+command_exists() {
+    command -v $@ > /dev/null 2>&1
+}
 
-echo "==> Installing Vim plugins"
-vim +PluginInstall +qa!
+backup_existing() {
+    local file=$1
+    local backup_file="${file}.bak"
 
-echo "==> Done"
+    if [ -h $file ]; then
+        if ls -l $file | grep -q "\/.dotfiles\/config\/"; then
+            if [ $PURGE_LOCAL = true ]; then
+                rm $file
+            fi
+        else
+            log "$file has been renamed to $backup_file"
+            mv $file $backup_file
+        fi
+    elif [ -f $file ] || [ -d $file ]; then
+        log "$file has been renamed to $backup_file"
+        mv $file $backup_file
+    fi
+}
+
+create_symlink() {
+    local file=$1
+    local target=$2
+
+    backup_existing "${file}"
+    if [ ! -e $file ] && [ ! -d $file ]; then
+        ln -s "$target" "$file"
+    fi
+}
+
+setup_dotfiles() {
+    if [ -d ~/.dotfiles ]; then
+        log "~/.dotfiles already exists, update and reinstall"
+        if confirm "Purge local configuration"; then
+            rm -rf ~/.dotfiles/config/local
+            PURGE_LOCAL=yes
+        fi
+        cd ~/.dotfiles
+        git pull origin $BRANCH || err "Failed to pull from GitHub repository"
+        cd -
+    else
+        log "Cloning lyubenblagoev/dotfiles into ~/.dotfiles"
+        git clone -b $BRANCH $REMOTE ~/.dotfiles || err "Failed to clone repo from GitHub"
+    fi
+}
+
+setup_shell() {
+    mkdir -p ~/.dotfiles/config/local/bash
+    cp ~/.dotfiles/config/bash/env.template ~/.dotfiles/config/local/bash/env
+    if ! grep -q .dotfiles\/config\/bash\/env-setup ~/.bashrc; then
+        log "Setting-up Bash environment"
+        sed -i "$ a [ -r ~/.dotfiles/config/bash/env-setup ] && . ~/.dotfiles/config/bash/env-setup" ~/.bashrc
+    fi
+}
+
+setup_vim() {
+    if [ ! -d ~/.dotfiles/config/local/vim/bundle ]; then
+        log "Cloning Vundle into vim/bundle"
+        mkdir -p ~/.dotfiles/config/local/vim/bundle
+        git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/config/local/vim/bundle/Vundle.vim \
+            || err "Failed to clone Vundle repo from GitHub"
+    fi
+
+    create_symlink ~/.vim ~/.dotfiles/config/local/vim
+    create_symlink ~/.vimrc ~/.dotfiles/config/vim/vimrc    
+
+    log "Installing Vim plugins"
+    vim +PluginInstall +qa!
+}
+
+setup_git() {
+    if [ ! -d ~/.dotfiles/config/local/git ]; then
+        mkdir -p ~/.dotfiles/config/local/git
+        cp ~/.dotfiles/config/git/gitconfig ~/.dotfiles/config/local/git/gitconfig
+    fi
+    create_symlink ~/.gitconfig ~/.dotfiles/config/local/git/gitconfig
+
+    if [ ! -d ~/.config/git/ ]; then
+        mkdir ~/.config/git
+    fi
+    create_symlink ~/.config/git/config ~/.dotfiles/config/git/config
+}
+
+main() {
+    required_software=("git" "vim")
+    for c in ${required_software[@]}; do
+        if ! command_exists $c; then
+            err "$c is not installed"
+            exit 1
+        fi
+    done
+
+    setup_dotfiles
+    setup_shell
+    setup_vim
+    setup_git
+
+    source ~/.bashrc
+}
+
+main
