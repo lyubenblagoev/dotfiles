@@ -124,7 +124,7 @@ setup_git() {
     create_symlink ~/.gitconfig ~/.dotfiles/config/local/git/gitconfig
 
     if [ ! -d ~/.config/git/ ]; then
-        mkdir ~/.config/git
+        mkdir -p ~/.config/git
     fi
     create_symlink ~/.config/git/config ~/.dotfiles/config/git/config
 }
