@@ -133,6 +133,12 @@ setup_git() {
     fi
 }
 
+setup_auto_update() {
+    if command_exists crontab; then
+        (crontab -l 2>/dev/null | fgrep -v "0 * * * * cd ~/.dotfiles && git pull --rebase"; echo "0 * * * * cd ~/.dotfiles && git pull --rebase") | crontab -
+    fi
+}
+
 main() {
     required_software=("git" "vim")
     for c in ${required_software[@]}; do
@@ -146,6 +152,7 @@ main() {
     setup_shell
     setup_vim
     setup_git
+    setup_auto_update
 
     source ~/.bashrc
 }
