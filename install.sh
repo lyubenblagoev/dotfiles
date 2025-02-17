@@ -135,7 +135,7 @@ setup_git() {
 
 setup_auto_update() {
     if command_exists crontab; then
-        (crontab -l 2>/dev/null | grep -F -v "0 * * * * cd ~/.dotfiles && git pull --rebase"; echo "0 * * * * cd ~/.dotfiles && git pull --rebase") | crontab -
+        (crontab -l 2>/dev/null | grep -F -v "0 * * * * cd ~/.dotfiles && git pull --rebase" || true; echo "0 * * * * cd ~/.dotfiles && git pull --rebase") | crontab -
     fi
 }
 
