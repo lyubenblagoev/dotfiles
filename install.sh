@@ -52,7 +52,7 @@ backup_existing() {
     local backup_file="${file}.bak"
 
     if [ -h $file ]; then
-        if ls -l $file | grep -q "\/.dotfiles\/config\/"; then
+        if ls -l $file | grep -q "/.dotfiles/config/"; then
             if [ $PURGE_LOCAL = true ]; then
                 rm $file
             fi
@@ -129,13 +129,13 @@ setup_git() {
     create_symlink ~/.config/git/config ~/.dotfiles/config/git/config
 
     if ! type -t "__git_ps1" > /dev/null 2>&1; then
-        curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.dotfiles/config/local/git/git-prompt.sh
+        curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh 2>/dev/null > ~/.dotfiles/config/local/git/git-prompt.sh
     fi
 }
 
 setup_auto_update() {
     if command_exists crontab; then
-        (crontab -l 2>/dev/null | fgrep -v "0 * * * * cd ~/.dotfiles && git pull --rebase"; echo "0 * * * * cd ~/.dotfiles && git pull --rebase") | crontab -
+        (crontab -l 2>/dev/null | grep -F -v "0 * * * * cd ~/.dotfiles && git pull --rebase"; echo "0 * * * * cd ~/.dotfiles && git pull --rebase") | crontab -
     fi
 }
 
