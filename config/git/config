@@ -41,6 +41,7 @@
     lg = log -p
     lol = log --oneline --graph
     lola = log --oneline --graph --all
+    lolfp = log --oneline --graph --first-parent
     sl = shrotlog
     sls = shortlog -s
     ls = ls-files
