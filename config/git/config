@@ -50,6 +50,7 @@
     ps = push
 [push]
     default = simple
+    autoSetupRemote = true
 [credential]
     helper = cache --timeout 3600
 [core]
