@@ -48,6 +48,7 @@
     pl = pull
     pr = pull --rebase
     ps = push
+    fix = "!vim $(git diff --name-only --diff-filter=U)"
 [push]
     default = simple
     autoSetupRemote = true
