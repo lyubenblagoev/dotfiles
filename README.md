@@ -1,5 +1,5 @@
 # Dotfiles
-Configuration files for Bash, Vim and Git.
+Configuration files for Bash, Tmux, Vim and Git.
 
 ## Installation
 

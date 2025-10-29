@@ -101,6 +101,24 @@ setup_shell() {
     fi
 }
 
+setup_tmux() {
+    if [ ! -d ~/.dotfiles/config/local/tmux/plugins/tmp ]; then
+        log "Cloning TPM into tmux/plugins/tmp"
+        mkdir -p ~/.dotfiles/config/local/tmux/plugins/tpm
+        git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/config/local/tmux/plugins/tpm \
+            || err "Failed to clone TPM repo from GitHub"
+    fi
+
+    create_symlink ~/.tmux.conf ~/.dotfiles/config/tmux/tmux.conf
+    create_symlink ~/.tmux ~/.dotfiles/config/local/tmux
+
+    log "Installing tmux plugins"
+    tmux start-server
+    tmux new-session -d -s __tpm_install_session__ "tmux source-file ~/.tmux.conf"
+    ~/.tmux/plugins/tpm/bin/install_plugins
+    tmux kill-session -t __tpm_install_session__
+}
+
 setup_vim() {
     if [ ! -d ~/.dotfiles/config/local/vim/bundle ]; then
         log "Cloning Vundle into vim/bundle"
@@ -140,7 +158,7 @@ setup_auto_update() {
 }
 
 main() {
-    required_software=("git" "vim")
+    required_software=("git" "vim" "tmux")
     for c in ${required_software[@]}; do
         if ! command_exists $c; then
             err "$c is not installed"
@@ -150,6 +168,7 @@ main() {
 
     setup_dotfiles
     setup_shell
+    setup_tmux
     setup_vim
     setup_git
     setup_auto_update
