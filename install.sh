@@ -2,7 +2,7 @@
 #
 # This script should be run via curl:
 #   curl -L https://raw.githubusercontent.com/lyubenblagoev/dotfiles/master/install.sh | bash
-# or via wget: 
+# or via wget:
 #   wget -qO- https://raw.githubusercontent.com/lyubenblagoev/dotfiles/master/install.sh | bash
 #
 
@@ -20,6 +20,9 @@ REPO=${REPO:-lyubenblagoev/dotfiles}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
 BRANCH=${BRANCH:-master}
 PURGE_LOCAL=false
+
+# Base dotfiles configuration directory
+DOTFILES_CONFIG_DIR="$HOME/.dotfiles/config"
 
 log() {
     echo -e "${BOLD}${BLUE}$*${RESET}"
@@ -80,7 +83,7 @@ setup_dotfiles() {
     if [ -d ~/.dotfiles ]; then
         log "~/.dotfiles already exists, update and reinstall"
         if confirm "Purge local configuration"; then
-            rm -rf ~/.dotfiles/config/local
+            rm -rf ${DOTFILES_CONFIG_DIR}/local
             PURGE_LOCAL=yes
         fi
         cd ~/.dotfiles
@@ -93,24 +96,28 @@ setup_dotfiles() {
 }
 
 setup_shell() {
-    mkdir -p ~/.dotfiles/config/local/bash
-    cp ~/.dotfiles/config/bash/env.template ~/.dotfiles/config/local/bash/env
+    local bash_local_dir="${DOTFILES_CONFIG_DIR}/local/bash"
+    mkdir -p $bash_local_dir
+    cp ${DOTFILES_CONFIG_DIR}/bash/env.template ${bash_local_dir}/env
     if ! grep -q .dotfiles\/config\/bash\/env-setup ~/.bashrc; then
         log "Setting-up Bash environment"
-        sed -i "$ a [ -r ~/.dotfiles/config/bash/env-setup ] && . ~/.dotfiles/config/bash/env-setup" ~/.bashrc
+        sed -i "$ a [ -r ${DOTFILES_CONFIG_DIR}/bash/env-setup ] && . ${DOTFILES_CONFIG_DIR}/bash/env-setup" ~/.bashrc
     fi
 }
 
 setup_tmux() {
-    if [ ! -d ~/.dotfiles/config/local/tmux/plugins/tmp ]; then
+    local tmux_local_dir="${DOTFILES_CONFIG_DIR}/local/tmux"
+    local tpm_dir="${tmux_local_dir}/plugins/tpm"
+
+    if [ ! -d $tpm_dir ]; then
         log "Cloning TPM into tmux/plugins/tmp"
-        mkdir -p ~/.dotfiles/config/local/tmux/plugins/tpm
-        git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/config/local/tmux/plugins/tpm \
+        mkdir -p $tpm_dir
+        git clone https://github.com/tmux-plugins/tpm $tpm_dir \
             || err "Failed to clone TPM repo from GitHub"
     fi
 
-    create_symlink ~/.tmux.conf ~/.dotfiles/config/tmux/tmux.conf
-    create_symlink ~/.tmux ~/.dotfiles/config/local/tmux
+    create_symlink ~/.tmux.conf ${DOTFILES_CONFIG_DIR}/tmux/tmux.conf
+    create_symlink ~/.tmux $tmux_local_dir
 
     log "Installing tmux plugins"
     tmux start-server
@@ -119,34 +126,39 @@ setup_tmux() {
 }
 
 setup_vim() {
-    if [ ! -d ~/.dotfiles/config/local/vim/bundle ]; then
+    local vim_local_dir="${DOTFILES_CONFIG_DIR}/local/vim"
+    local bundle_dir="${vim_local_dir}/bundle"
+
+    if [ ! -d $bundle_dir ]; then
         log "Cloning Vundle into vim/bundle"
-        mkdir -p ~/.dotfiles/config/local/vim/bundle
-        git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/config/local/vim/bundle/Vundle.vim \
+        mkdir -p $bundle_dir
+        git clone https://github.com/VundleVim/Vundle.vim.git ${bundle_dir}/Vundle.vim \
             || err "Failed to clone Vundle repo from GitHub"
     fi
 
-    create_symlink ~/.vim ~/.dotfiles/config/local/vim
-    create_symlink ~/.vimrc ~/.dotfiles/config/vim/vimrc    
+    create_symlink ~/.vim $vim_local_dir
+    create_symlink ~/.vimrc ${DOTFILES_CONFIG_DIR}/vim/vimrc
 
     log "Installing Vim plugins"
     vim +PluginInstall +qa!
 }
 
 setup_git() {
-    if [ ! -d ~/.dotfiles/config/local/git ]; then
-        mkdir -p ~/.dotfiles/config/local/git
-        cp ~/.dotfiles/config/git/gitconfig ~/.dotfiles/config/local/git/gitconfig
+    local git_local_dir="${DOTFILES_CONFIG_DIR}/local/git"
+
+    if [ ! -d $git_local_dir ]; then
+        mkdir -p $git_local_dir
+        cp ${DOTFILES_CONFIG_DIR}/git/gitconfig $git_local_dir/gitconfig
     fi
-    create_symlink ~/.gitconfig ~/.dotfiles/config/local/git/gitconfig
+    create_symlink ~/.gitconfig $git_local_dir/gitconfig
 
     if [ ! -d ~/.config/git/ ]; then
         mkdir -p ~/.config/git
     fi
-    create_symlink ~/.config/git/config ~/.dotfiles/config/git/config
+    create_symlink ~/.config/git/config ${DOTFILES_CONFIG_DIR}/git/config
 
     if ! type -t "__git_ps1" > /dev/null 2>&1; then
-        curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh 2>/dev/null > ~/.dotfiles/config/local/git/git-prompt.sh
+        curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh 2>/dev/null > $git_local_dir/git-prompt.sh
     fi
 }
 
