@@ -116,7 +116,6 @@ setup_tmux() {
     tmux start-server
     tmux new-session -d -s __tpm_install_session__ "tmux source-file ~/.tmux.conf"
     ~/.tmux/plugins/tpm/bin/install_plugins
-    tmux kill-session -t __tpm_install_session__
 }
 
 setup_vim() {
