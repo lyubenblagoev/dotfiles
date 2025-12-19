@@ -25,6 +25,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'PProvost/vim-ps1'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vimpostor/vim-lumen'
+Plugin 'tpope/vim-unimpaired'
 
 call vundle#end()
 
