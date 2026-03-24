@@ -112,7 +112,7 @@ set fileencoding=utf-8
 set scrolloff=2
 
 " \ is the leader character
-let mapleader = ","
+let mapleader = " "
 
 " Use clipboard
 set clipboard=unnamed
