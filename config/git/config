@@ -20,6 +20,7 @@
     cav = commit -a -v
     cam = commit --amend
     camr = commit --amend --reset-author
+    camd = commit --amend --no-edit --date=now
     cv = commit -v
     cp = commit -p
     cpv = commit -p -v
@@ -42,6 +43,7 @@
     lol = log --oneline --graph
     lola = log --oneline --graph --all
     lolfp = log --oneline --graph --first-parent
+    last = log -1 --stat
     sl = shrotlog
     sls = shortlog -s
     ls = ls-files
